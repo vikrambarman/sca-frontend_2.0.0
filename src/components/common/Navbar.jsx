@@ -32,15 +32,11 @@ const Navbar = () => {
                     <ul className="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
 
                         <li className="nav-item">
-                            <NavLink to="/" className="nav-link">
-                                Home
-                            </NavLink>
+                            <NavLink to="/" className="nav-link">Home</NavLink>
                         </li>
 
                         <li className="nav-item">
-                            <NavLink to="/about" className="nav-link">
-                                About
-                            </NavLink>
+                            <NavLink to="/about" className="nav-link">About</NavLink>
                         </li>
 
                         {/* Courses Dropdown */}
@@ -59,34 +55,18 @@ const Navbar = () => {
                                     </NavLink>
                                 </li>
                                 <li><hr className="dropdown-divider" /></li>
-                                <li>
-                                    <NavLink to="/courses/dca" className="dropdown-item">
-                                        DCA
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/courses/adca" className="dropdown-item">
-                                        ADCA
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/courses/tally" className="dropdown-item">
-                                        Tally
-                                    </NavLink>
-                                </li>
+                                <li><NavLink to="/courses/dca" className="dropdown-item">DCA</NavLink></li>
+                                <li><NavLink to="/courses/adca" className="dropdown-item">ADCA</NavLink></li>
+                                <li><NavLink to="/courses/tally" className="dropdown-item">Tally</NavLink></li>
                             </ul>
                         </li>
 
                         <li className="nav-item">
-                            <NavLink to="/manyatain" className="nav-link">
-                                Manyatain
-                            </NavLink>
+                            <NavLink to="/manyatain" className="nav-link">Manyatain</NavLink>
                         </li>
 
                         <li className="nav-item">
-                            <NavLink to="/gallery" className="nav-link">
-                                Gallery
-                            </NavLink>
+                            <NavLink to="/gallery" className="nav-link">Gallery</NavLink>
                         </li>
 
                         <li className="nav-item">
@@ -96,21 +76,44 @@ const Navbar = () => {
                         </li>
 
                         <li className="nav-item">
-                            <NavLink to="/contact" className="nav-link">
-                                Contact Us
-                            </NavLink>
+                            <NavLink to="/contact" className="nav-link">Contact Us</NavLink>
                         </li>
                     </ul>
 
-                    {/* Right Buttons */}
-                    <div className="d-flex gap-2">
+                    {/* Right Section */}
+                    <div className="d-flex align-items-center gap-2">
+
+                        {/* Login Dropdown */}
+                        <div className="dropdown">
+                            <button
+                                className="btn btn-outline-secondary btn-sm dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                            >
+                                Login
+                            </button>
+                            <ul className="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <NavLink to="/student/login" className="dropdown-item">
+                                        Student Login
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/admin/login" className="dropdown-item">
+                                        Admin Login
+                                    </NavLink>
+                                </li>
+                            </ul>
+                        </div>
+
                         <NavLink to="/enquiry" className="btn btn-primary btn-sm">
                             Enquiry
                         </NavLink>
+
                         <NavLink to="/registration" className="btn btn-outline-primary btn-sm">
                             Register
                         </NavLink>
                     </div>
+
                 </div>
             </div>
         </nav>

@@ -11,6 +11,8 @@ import Enquiry from '../pages/Enquiry'
 import Registration from '../pages/Registration'
 import CertificateVerify from '../pages/CertificateVerify'
 import Contact from '../pages/Contact'
+import StudentLogin from '../pages/student/StudentLogin'
+// import StudentDashboard from '../pages/student/StudentDashboard'
 
 
 const router = createBrowserRouter([
@@ -28,7 +30,9 @@ const router = createBrowserRouter([
             { path: 'enquiry', element: <Enquiry /> },
             { path: 'registration', element: <Registration /> },
             { path: 'certificate-verify', element: <CertificateVerify /> },
-            { path: 'contact', element: <Contact /> }
+            { path: 'contact', element: <Contact /> },
+            { path: 'student/login', element: <StudentLogin/>},
+            // { path: 'student/dashboard', element: <StudentDashboard/>},
         ]
     }
 ])
