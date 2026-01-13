@@ -12,6 +12,9 @@ import Registration from '../pages/Registration'
 import CertificateVerify from '../pages/CertificateVerify'
 import Contact from '../pages/Contact'
 import StudentLogin from '../pages/student/StudentLogin'
+import AdminLogin from '../admin/pages/AdminLogin'
+import AdminLayout from '../layouts/AdminLayout'
+import AdminDashboard from '../admin/pages/AdminDashboard'
 // import StudentDashboard from '../pages/student/StudentDashboard'
 
 
@@ -31,8 +34,22 @@ const router = createBrowserRouter([
             { path: 'registration', element: <Registration /> },
             { path: 'certificate-verify', element: <CertificateVerify /> },
             { path: 'contact', element: <Contact /> },
-            { path: 'student/login', element: <StudentLogin/>},
+            { path: 'student/login', element: <StudentLogin /> },
             // { path: 'student/dashboard', element: <StudentDashboard/>},
+        ]
+    },
+    // Admin Login (public)
+    {
+        path: '/admin/login',
+        element: <AdminLogin />
+    },
+
+    // Admin Protected Routes
+    {
+        path: '/admin',
+        element: <AdminLayout />,
+        children: [
+            { path: 'dashboard', element: <AdminDashboard /> }
         ]
     }
 ])
