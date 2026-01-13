@@ -1,33 +1,54 @@
-import StudentSidebar from '../../components/student/StudentSidebar'
-import DashboardHeader from '../../components/student/DashboardHeader'
-import NotesList from '../../components/student/NotesList'
-import ProfileCard from '../../components/student/ProfileCard'
-
 const StudentDashboard = () => {
+    const student = JSON.parse(
+        localStorage.getItem('studentInfo')
+    )
+
     return (
-        <div className="d-flex">
+        <>
+            <h4 className="fw-bold mb-1">
+                Welcome, {student.name}
+            </h4>
 
-            <StudentSidebar />
+            <p className="text-muted mb-4">
+                Roll No: <b>{student.rollNumber}</b> | Course: <b>{student.course}</b>
+            </p>
 
-            <div className="flex-grow-1">
-                <DashboardHeader />
-
-                <div className="container py-4">
-                    <div className="row g-4">
-
-                        <div className="col-md-8">
-                            <NotesList />
+            <div className="row g-4">
+                <div className="col-md-4">
+                    <div className="card shadow-sm h-100">
+                        <div className="card-body">
+                            <h6 className="fw-bold">My Notes</h6>
+                            <p className="text-muted mb-2">
+                                Course-wise study material
+                            </p>
+                            <a
+                                href="/student/notes"
+                                className="btn btn-sm btn-primary"
+                            >
+                                View Notes
+                            </a>
                         </div>
+                    </div>
+                </div>
 
-                        <div className="col-md-4">
-                            <ProfileCard />
+                <div className="col-md-4">
+                    <div className="card shadow-sm h-100">
+                        <div className="card-body">
+                            <h6 className="fw-bold">Certificates</h6>
+                            <p className="text-muted mb-2">
+                                Download issued certificates
+                            </p>
+                            <a
+                                href="/student/certificates"
+                                className="btn btn-sm btn-outline-primary"
+                            >
+                                View Certificates
+                            </a>
                         </div>
-
                     </div>
                 </div>
             </div>
-
-        </div>
+        </>
     )
 }
 

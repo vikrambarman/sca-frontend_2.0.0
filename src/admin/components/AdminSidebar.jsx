@@ -14,32 +14,44 @@ const AdminSidebar = () => {
                         Dashboard
                     </NavLink>
                 </li>
+
                 <li className="nav-item">
                     <NavLink to="/admin/students" className="nav-link">
                         Students
                     </NavLink>
                 </li>
+
+                {/* Add Student */}
+                <li className="nav-item ms-3">
+                    <NavLink to="/admin/students/add" className="nav-link">
+                        Add Student
+                    </NavLink>
+                </li>
+
                 <li className="nav-item">
                     <NavLink to="/admin/courses" className="nav-link">
                         Courses
                     </NavLink>
                 </li>
+
                 <li className="nav-item">
                     <NavLink to="/admin/notes" className="nav-link">
                         Notes
                     </NavLink>
                 </li>
+
                 <li className="nav-item">
                     <NavLink to="/admin/certificates" className="nav-link">
                         Certificates
                     </NavLink>
                 </li>
+
                 <li className="nav-item mt-3">
                     <button
                         className="btn btn-sm btn-outline-danger w-100"
                         onClick={() => {
                             localStorage.removeItem('adminToken')
-                            window.location.href = '/admin/login'
+                            window.location.href = '/'
                         }}
                     >
                         Logout

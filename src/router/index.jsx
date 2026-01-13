@@ -15,6 +15,12 @@ import StudentLogin from '../pages/student/StudentLogin'
 import AdminLogin from '../admin/pages/AdminLogin'
 import AdminLayout from '../layouts/AdminLayout'
 import AdminDashboard from '../admin/pages/AdminDashboard'
+import Students from '../admin/pages/Student'
+import AddStudent from '../admin/pages/AddStudent'
+import StudentDashboard from '../pages/student/StudentDashboard'
+import StudentLayout from '../layouts/StudentLayout'
+import StudentNotes from '../pages/student/StudentNotes'
+import StudentCertificates from '../pages/student/StudentCertificates'
 // import StudentDashboard from '../pages/student/StudentDashboard'
 
 
@@ -35,23 +41,30 @@ const router = createBrowserRouter([
             { path: 'certificate-verify', element: <CertificateVerify /> },
             { path: 'contact', element: <Contact /> },
             { path: 'student/login', element: <StudentLogin /> },
-            // { path: 'student/dashboard', element: <StudentDashboard/>},
+            { path: '/admin/login', element: <AdminLogin />},
         ]
     },
-    // Admin Login (public)
-    {
-        path: '/admin/login',
-        element: <AdminLogin />
-    },
-
     // Admin Protected Routes
     {
         path: '/admin',
         element: <AdminLayout />,
         children: [
-            { path: 'dashboard', element: <AdminDashboard /> }
+            { path: 'dashboard', element: <AdminDashboard /> },
+            { path: 'students', element: <Students /> },
+            { path: 'students/add', element: <AddStudent /> }
+        ]
+    },
+
+    {
+        path: 'student',
+        element: <StudentLayout />,
+        children: [
+            { path: 'dashboard', element: <StudentDashboard /> },
+            { path: 'notes', element: <StudentNotes /> },
+            { path: 'certificates', element: <StudentCertificates /> }
         ]
     }
+
 ])
 
 export default router

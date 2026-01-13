@@ -1,0 +1,68 @@
+import { useState } from 'react'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+
+const AddStudent = () => {
+    const navigate = useNavigate()
+    const [form, setForm] = useState({
+        name: '',
+        fatherName: '',
+        mobile: '',
+        email: '',
+        course: ''
+    })
+
+    const handleChange = e => {
+        setForm({ ...form, [e.target.name]: e.target.value })
+    }
+
+    const handleSubmit = async e => {
+        e.preventDefault()
+
+        await axios.post(
+            'http://localhost:5000/api/students',
+            form,
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('adminToken')}`
+                }
+            }
+        )
+
+        navigate('/admin/students')
+    }
+
+    return (
+        <>
+            <h4 className="fw-bold mb-3">Add Student</h4>
+
+            <form onSubmit={handleSubmit} className="row g-3">
+                <div className="col-md-6">
+                    <input name="name" className="form-control" placeholder="Student Name" onChange={handleChange} required />
+                </div>
+                <div className="col-md-6">
+                    <input name="fatherName" className="form-control" placeholder="Father Name" onChange={handleChange} />
+                </div>
+                <div className="col-md-6">
+                    <input name="mobile" className="form-control" placeholder="Mobile" onChange={handleChange} required />
+                </div>
+                <div className="col-md-6">
+                    <input name="email" className="form-control" placeholder="Email" onChange={handleChange} />
+                </div>
+                <div className="col-md-6">
+                    <select name="course" className="form-select" onChange={handleChange} required>
+                        <option value="">Select Course</option>
+                        <option>DCA</option>
+                        <option>ADCA</option>
+                        <option>Tally</option>
+                    </select>
+                </div>
+                <div className="col-12">
+                    <button className="btn btn-primary">Save Student</button>
+                </div>
+            </form>
+        </>
+    )
+}
+
+export default AddStudent
