@@ -1,6 +1,6 @@
 import PageHeader from '../components/common/PageHeader'
 
-const Manyatain = () => {
+const Accreditation = () => {
   return (
     <>
       <PageHeader
@@ -76,4 +76,4 @@ const Manyatain = () => {
   )
 }
 
-export default Manyatain
+export default Accreditation

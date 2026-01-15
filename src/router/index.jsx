@@ -7,7 +7,6 @@ import Home from '../pages/Home'
 import About from '../pages/About'
 import Courses from '../pages/Courses'
 import CourseDetails from '../pages/CourseDetails'
-import Manyatain from '../pages/Manyatain'
 import Gallery from '../pages/Gallery'
 import Enquiry from '../pages/Enquiry'
 import Registration from '../pages/Registration'
@@ -19,7 +18,6 @@ import StudentLogin from '../pages/student/StudentLogin'
 import StudentLayout from '../layouts/StudentLayout'
 import StudentDashboard from '../pages/student/StudentDashboard'
 import StudentNotes from '../pages/student/StudentNotes'
-import StudentCertificates from '../pages/student/StudentCertificates'
 
 // Admin
 import AdminLogin from '../admin/pages/AdminLogin'
@@ -27,6 +25,9 @@ import AdminLayout from '../layouts/AdminLayout'
 import AdminDashboard from '../admin/pages/AdminDashboard'
 import Students from '../admin/pages/Student'
 import AddStudent from '../admin/pages/AddStudent'
+import Accreditation from '../pages/Accreditation'
+import AdminCourses from '../admin/pages/AdminCourses'
+import AddEditCourse from '../admin/pages/AddEditCourse'
 
 const router = createBrowserRouter([
     {
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
             { path: 'about', element: <About /> },
             { path: 'courses', element: <Courses /> },
             { path: 'courses/:slug', element: <CourseDetails /> },
-            { path: 'manyatain', element: <Manyatain /> },
+            { path: 'accreditation', element:  <Accreditation/>},
             { path: 'gallery', element: <Gallery /> },
             { path: 'enquiry', element: <Enquiry /> },
             { path: 'registration', element: <Registration /> },
@@ -57,6 +58,9 @@ const router = createBrowserRouter([
             { path: 'dashboard', element: <AdminDashboard /> },
             { path: 'students', element: <Students /> },
             { path: 'students/add', element: <AddStudent /> },
+            { path: 'courses', element:  <AdminCourses/>},
+            { path: 'courses/add', element: <AddEditCourse/> },
+            { path: 'courses/edit/:id', element: <AddEditCourse/> },
         ]
     },
 

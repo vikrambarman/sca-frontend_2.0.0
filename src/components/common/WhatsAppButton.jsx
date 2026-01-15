@@ -1,5 +1,5 @@
 const WhatsAppButton = () => {
-  const phoneNumber = '919000000000' // country code ke saath
+  const phoneNumber = '919009087883' // country code ke saath
   const message = 'Hello, I want to know more about courses.'
 
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
