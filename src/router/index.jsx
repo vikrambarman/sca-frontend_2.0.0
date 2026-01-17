@@ -14,10 +14,10 @@ import CertificateVerify from '../pages/CertificateVerify'
 import Contact from '../pages/Contact'
 
 // Student
-import StudentLogin from '../pages/student/StudentLogin'
+import StudentLogin from '../student/StudentLogin'
 import StudentLayout from '../layouts/StudentLayout'
-import StudentDashboard from '../pages/student/StudentDashboard'
-import StudentNotes from '../pages/student/StudentNotes'
+import StudentDashboard from '../student/StudentDashboard'
+import StudentNotes from '../student/StudentNotes'
 
 // Admin
 import AdminLogin from '../admin/pages/AdminLogin'

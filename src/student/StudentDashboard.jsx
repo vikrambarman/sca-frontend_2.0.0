@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import api from '../../services/api'
-import { getStudent, logoutStudent } from '../../utils/auth'
+import api from '../services/api'
+import { getStudent, logoutStudent } from '../utils/auth'
 import { Link } from 'react-router-dom'
 import CertificateVerificationGuide from './CertificateVerificationGuide'
 
