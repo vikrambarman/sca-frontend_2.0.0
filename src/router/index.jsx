@@ -28,6 +28,7 @@ import AddStudent from '../admin/pages/AddStudent'
 import Accreditation from '../pages/Accreditation'
 import AdminCourses from '../admin/pages/AdminCourses'
 import AddEditCourse from '../admin/pages/AddEditCourse'
+import EditStudent from '../admin/pages/EditStudent'
 
 const router = createBrowserRouter([
     {
@@ -58,6 +59,7 @@ const router = createBrowserRouter([
             { path: 'dashboard', element: <AdminDashboard /> },
             { path: 'students', element: <Students /> },
             { path: 'students/add', element: <AddStudent /> },
+            { path: 'students/edit/:id', element: <EditStudent/> },
             { path: 'courses', element:  <AdminCourses/>},
             { path: 'courses/add', element: <AddEditCourse/> },
             { path: 'courses/edit/:id', element: <AddEditCourse/> },

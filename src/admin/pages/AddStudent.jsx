@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
@@ -11,6 +11,22 @@ const AddStudent = () => {
         email: '',
         course: ''
     })
+    const [courses, setCourses] = useState([])
+
+    // Fetch courses from backend
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const res = await axios.get('http://localhost:5000/api/courses?admin=true', {
+                    headers: { Authorization: `Bearer ${localStorage.getItem('adminToken')}` }
+                })
+                setCourses(res.data)
+            } catch (err) {
+                console.error('Failed to fetch courses', err)
+            }
+        }
+        fetchCourses()
+    }, [])
 
     const handleChange = e => {
         setForm({ ...form, [e.target.name]: e.target.value })
@@ -19,17 +35,20 @@ const AddStudent = () => {
     const handleSubmit = async e => {
         e.preventDefault()
 
-        await axios.post(
-            'http://localhost:5000/api/students',
-            form,
-            {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('adminToken')}`
+        try {
+            await axios.post(
+                'http://localhost:5000/api/students',
+                form,
+                {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('adminToken')}`
+                    }
                 }
-            }
-        )
-
-        navigate('/admin/students')
+            )
+            navigate('/admin/students')
+        } catch (err) {
+            console.error('Failed to add student', err)
+        }
     }
 
     return (
@@ -38,23 +57,53 @@ const AddStudent = () => {
 
             <form onSubmit={handleSubmit} className="row g-3">
                 <div className="col-md-6">
-                    <input name="name" className="form-control" placeholder="Student Name" onChange={handleChange} required />
+                    <input
+                        name="name"
+                        className="form-control"
+                        placeholder="Student Name"
+                        onChange={handleChange}
+                        required
+                    />
                 </div>
                 <div className="col-md-6">
-                    <input name="fatherName" className="form-control" placeholder="Father Name" onChange={handleChange} />
+                    <input
+                        name="fatherName"
+                        className="form-control"
+                        placeholder="Father Name"
+                        onChange={handleChange}
+                    />
                 </div>
                 <div className="col-md-6">
-                    <input name="mobile" className="form-control" placeholder="Mobile" onChange={handleChange} required />
+                    <input
+                        name="mobile"
+                        className="form-control"
+                        placeholder="Mobile"
+                        onChange={handleChange}
+                        required
+                    />
                 </div>
                 <div className="col-md-6">
-                    <input name="email" className="form-control" placeholder="Email" onChange={handleChange} />
+                    <input
+                        name="email"
+                        className="form-control"
+                        placeholder="Email"
+                        onChange={handleChange}
+                    />
                 </div>
                 <div className="col-md-6">
-                    <select name="course" className="form-select" onChange={handleChange} required>
+                    <select
+                        name="course"
+                        className="form-select"
+                        onChange={handleChange}
+                        required
+                        value={form.course}
+                    >
                         <option value="">Select Course</option>
-                        <option>DCA</option>
-                        <option>ADCA</option>
-                        <option>Tally</option>
+                        {courses.map(c => (
+                            <option key={c._id} value={c.name}>
+                                {c.name}
+                            </option>
+                        ))}
                     </select>
                 </div>
                 <div className="col-12">
