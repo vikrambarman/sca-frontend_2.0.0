@@ -7,7 +7,7 @@ const CertificateVerify = () => {
     <>
       <PageHeader
         title="Certificate Verification"
-        subtitle="Verify the authenticity of certificates issued by Shivshakti Computer Academy"
+        subtitle="Verify certificates through official issuing authorities"
       />
 
       <section className="py-5">

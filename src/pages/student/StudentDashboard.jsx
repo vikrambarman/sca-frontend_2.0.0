@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import api from '../../services/api'
 import { getStudent, logoutStudent } from '../../utils/auth'
 import { Link } from 'react-router-dom'
+import CertificateVerificationGuide from './CertificateVerificationGuide'
 
 const StudentDashboard = () => {
     const [notes, setNotes] = useState([])
@@ -17,6 +18,7 @@ const StudentDashboard = () => {
 
     return (
         <div className="container py-4">
+
             {/* Header */}
             <div className="d-flex justify-content-between align-items-center mb-4">
                 <div>
@@ -26,15 +28,18 @@ const StudentDashboard = () => {
                     </p>
                 </div>
 
-                <button
+                {/* <button
                     onClick={logoutStudent}
                     className="btn btn-outline-danger btn-sm"
                 >
                     Logout
-                </button>
+                </button> */}
             </div>
 
             <hr />
+
+            {/* ✅ STEP 2 ADDED HERE */}
+            <CertificateVerificationGuide student={student} />
 
             {/* Notes Section */}
             <h5 className="mb-3">Your Notes</h5>

@@ -14,8 +14,9 @@ const StudentLayout = () => {
             <nav className="navbar navbar-light bg-white shadow-sm">
                 <div className="container">
                     <span className="fw-bold">
-                        Student Panel
+                        Student Dashboard
                     </span>
+
 
                     <div className="d-flex align-items-center gap-3">
                         <span className="small text-muted">
