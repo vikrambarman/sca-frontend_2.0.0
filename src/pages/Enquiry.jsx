@@ -7,18 +7,18 @@ const Enquiry = () => {
     <>
       <PageHeader
         title="Course Enquiry"
-        subtitle="Fill the form and our team will contact you shortly"
+        subtitle="Share your details and our admission team will guide you shortly"
       />
 
-      <section className="py-5">
+      <section className="py-5 bg-light">
         <div className="container">
-          <div className="row g-4">
+          <div className="row g-4 align-items-stretch">
 
-            <div className="col-md-7">
+            <div className="col-lg-7">
               <EnquiryForm />
             </div>
 
-            <div className="col-md-5">
+            <div className="col-lg-5">
               <ContactInfoCard />
             </div>
 

@@ -1,4 +1,13 @@
 import { motion } from 'framer-motion'
+import {
+  FaUniversity,
+  FaCertificate,
+  FaLaptopCode,
+  FaCheckCircle,
+  FaBullseye,
+  FaEye,
+  FaShieldAlt
+} from 'react-icons/fa'
 import PageHeader from '../components/common/PageHeader'
 
 const sectionFade = {
@@ -6,12 +15,27 @@ const sectionFade = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6 }
+    transition: { duration: 0.7, ease: 'easeOut' }
   }
 }
 
-const cardHover = {
-  whileHover: { y: -6, boxShadow: '0 12px 30px rgba(0,0,0,0.08)' }
+const stagger = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.15 }
+  }
+}
+
+const card = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 }
+}
+
+const hoverLift = {
+  whileHover: {
+    y: -8,
+    boxShadow: '0 20px 40px rgba(0,0,0,0.08)'
+  }
 }
 
 const About = () => {
@@ -22,18 +46,20 @@ const About = () => {
         subtitle="Trusted computer education with recognized certification and practical training"
       />
 
-      <section className="py-5">
+      <section className="py-5 bg-light">
         <div className="container">
 
           {/* ================= WHO WE ARE ================= */}
           <motion.div
             variants={sectionFade}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true }}
             className="row g-5 align-items-center mb-5"
           >
             <div className="col-md-7">
-              <h4 className="fw-bold mb-3">
+              <h4 className="fw-semibold mb-3 d-flex align-items-center gap-2">
+                <FaUniversity className="text-primary" />
                 Who We Are
               </h4>
 
@@ -63,70 +89,87 @@ const About = () => {
 
             <div className="col-md-5">
               <motion.div
-                {...cardHover}
-                className="card border-0 shadow-sm"
+                variants={card}
+                {...hoverLift}
+                className="card border-0 rounded-4"
               >
-                <div className="card-body">
-                  <h6 className="fw-bold mb-3">
+                <div className="card-body p-4 p-lg-5">
+                  <h6 className="fw-semibold mb-3 d-flex align-items-center gap-2">
+                    <FaCertificate className="text-success" />
                     Institute Recognition
                   </h6>
 
-                  <ul className="list-unstyled small text-muted mb-0">
-                    <li>• MSME (Udyam) Registered Institute</li>
-                    <li>• ISO 9001:2015 Certified</li>
-                    <li>• Authorized GSDM Training Centre</li>
-                    <li>• Drishti Computer Education Franchise</li>
-                    <li>• Skill India & DigiLocker Enabled</li>
+                  <ul className="list-unstyled small text-muted mb-0 lh-lg">
+                    <li><FaCheckCircle className="text-success me-2" /> MSME (Udyam) Registered Institute</li>
+                    <li><FaCheckCircle className="text-success me-2" /> ISO 9001:2015 Certified</li>
+                    <li><FaCheckCircle className="text-success me-2" /> Authorized GSDM Training Centre</li>
+                    <li><FaCheckCircle className="text-success me-2" /> Drishti Computer Education Franchise</li>
+                    <li><FaCheckCircle className="text-success me-2" /> Skill India & DigiLocker Enabled</li>
                   </ul>
                 </div>
               </motion.div>
             </div>
           </motion.div>
 
-          {/* ================= HOW CERTIFICATION WORKS ================= */}
+          {/* ================= TRAINING & CERTIFICATION ================= */}
           <motion.div
             variants={sectionFade}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true }}
             className="mb-5"
           >
             <div className="text-center mb-4">
-              <h5 className="fw-bold">
+              <h5 className="fw-semibold mb-2">
                 Our Training & Certification System
               </h5>
-              <p className="text-muted small">
+              <p className="text-muted small mb-0">
                 Clear process so every student understands how certificates are issued
               </p>
             </div>
 
-            <div className="row g-4">
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="row g-4"
+            >
               {[
                 {
                   title: '100% Practical Training',
-                  text: 'Every course focuses on hands-on computer practice so students gain real working skills.'
+                  text: 'Every course focuses on hands-on computer practice so students gain real working skills.',
+                  icon: <FaLaptopCode className="text-primary" />
                 },
                 {
                   title: 'Authorized Course Mapping',
-                  text: 'Basic courses are certified under Drishti Computer Education, while selected diploma courses come under GSDM.'
+                  text: 'Basic courses are certified under Drishti Computer Education, while selected diploma courses come under GSDM.',
+                  icon: <FaCertificate className="text-success" />
                 },
                 {
                   title: 'Government Recognition',
-                  text: 'Eligible diploma courses are registered on the Skill India portal as per guidelines.'
+                  text: 'Eligible diploma courses are registered on the Skill India portal as per guidelines.',
+                  icon: <FaShieldAlt className="text-warning" />
                 },
                 {
                   title: 'Digital Certificate Access',
-                  text: 'Approved certificates are made available on DigiLocker for online verification.'
+                  text: 'Approved certificates are made available on DigiLocker for online verification.',
+                  icon: <FaCheckCircle className="text-info" />
                 }
               ].map((item, i) => (
                 <div key={i} className="col-md-6">
                   <motion.div
-                    {...cardHover}
-                    className="card h-100 border-0 shadow-sm"
+                    variants={card}
+                    {...hoverLift}
+                    className="card h-100 border-0 rounded-4"
                   >
-                    <div className="card-body">
-                      <h6 className="fw-bold">
-                        {item.title}
-                      </h6>
+                    <div className="card-body p-4">
+                      <div className="d-flex align-items-center gap-2 mb-2">
+                        {item.icon}
+                        <h6 className="fw-semibold mb-0">
+                          {item.title}
+                        </h6>
+                      </div>
                       <p className="text-muted small mb-0">
                         {item.text}
                       </p>
@@ -134,23 +177,26 @@ const About = () => {
                   </motion.div>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* ================= MISSION & VISION ================= */}
           <motion.div
-            variants={sectionFade}
+            variants={stagger}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true }}
             className="row g-4 mb-5"
           >
             <div className="col-md-6">
               <motion.div
-                {...cardHover}
-                className="card border-0 shadow-sm h-100"
+                variants={card}
+                {...hoverLift}
+                className="card border-0 h-100 rounded-4"
               >
-                <div className="card-body">
-                  <h5 className="fw-bold mb-2">
+                <div className="card-body p-4 p-lg-5">
+                  <h5 className="fw-semibold mb-2 d-flex align-items-center gap-2">
+                    <FaBullseye className="text-danger" />
                     Our Mission
                   </h5>
                   <p className="text-muted small mb-0">
@@ -168,11 +214,13 @@ const About = () => {
 
             <div className="col-md-6">
               <motion.div
-                {...cardHover}
-                className="card border-0 shadow-sm h-100"
+                variants={card}
+                {...hoverLift}
+                className="card border-0 h-100 rounded-4"
               >
-                <div className="card-body">
-                  <h5 className="fw-bold mb-2">
+                <div className="card-body p-4 p-lg-5">
+                  <h5 className="fw-semibold mb-2 d-flex align-items-center gap-2">
+                    <FaEye className="text-primary" />
                     Our Vision
                   </h5>
                   <p className="text-muted small mb-0">
@@ -192,13 +240,15 @@ const About = () => {
           <motion.div
             variants={sectionFade}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true }}
             className="row"
           >
             <div className="col-lg-10 mx-auto">
-              <div className="card border-0 shadow-sm text-center">
-                <div className="card-body p-4">
-                  <h5 className="fw-bold mb-2">
+              <div className="card border-0 text-center rounded-4 shadow-sm">
+                <div className="card-body p-4 p-md-5">
+                  <h5 className="fw-semibold mb-2 d-flex justify-content-center align-items-center gap-2">
+                    <FaShieldAlt className="text-success" />
                     Why Students Trust Shivshakti Computer Academy
                   </h5>
                   <p className="text-muted small mb-0">

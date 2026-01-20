@@ -1,9 +1,12 @@
 const EnquiryForm = () => {
     return (
-        <div className="card shadow-sm">
-            <div className="card-body">
+        <div className="card shadow-sm border-0">
+            <div className="card-body p-4">
 
-                <h5 className="fw-bold mb-3">Send Your Enquiry</h5>
+                <h5 className="fw-bold mb-1">Send Your Enquiry</h5>
+                <p className="text-muted small mb-4">
+                    Fill in the details below and we’ll get back to you shortly.
+                </p>
 
                 <form>
                     <div className="row g-3">
@@ -13,7 +16,7 @@ const EnquiryForm = () => {
                             <input
                                 type="text"
                                 className="form-control"
-                                placeholder="Your name"
+                                placeholder="Enter your full name"
                                 required
                             />
                         </div>
@@ -31,7 +34,7 @@ const EnquiryForm = () => {
                         <div className="col-md-6">
                             <label className="form-label">Course Interested In</label>
                             <select className="form-select">
-                                <option>Select course</option>
+                                <option value="">Select course</option>
                                 <option>DCA</option>
                                 <option>ADCA</option>
                                 <option>Tally</option>
@@ -40,7 +43,7 @@ const EnquiryForm = () => {
                         </div>
 
                         <div className="col-md-6">
-                            <label className="form-label">Preferred Contact</label>
+                            <label className="form-label">Preferred Contact Method</label>
                             <select className="form-select">
                                 <option>Phone Call</option>
                                 <option>WhatsApp</option>
@@ -52,12 +55,12 @@ const EnquiryForm = () => {
                             <textarea
                                 className="form-control"
                                 rows="3"
-                                placeholder="Your message"
+                                placeholder="Any specific question or requirement"
                             ></textarea>
                         </div>
 
-                        <div className="col-12">
-                            <button type="submit" className="btn btn-primary w-100">
+                        <div className="col-12 pt-2">
+                            <button type="submit" className="btn btn-primary w-100 py-2">
                                 Submit Enquiry
                             </button>
                         </div>

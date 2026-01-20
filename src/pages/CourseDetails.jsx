@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import PageHeader from '../components/common/PageHeader'
 import getCourseBySlug from '../utils/getCourseBySlug'
 import api from '../services/api'
@@ -9,6 +9,7 @@ const CourseDetails = () => {
 
   const [course, setCourse] = useState(null)
   const [loading, setLoading] = useState(true)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchCourse = async () => {
@@ -50,46 +51,79 @@ const CourseDetails = () => {
     <>
       <PageHeader
         title={course.name}
-        subtitle={course.level}
+        subtitle={`${course.level} Program`}
       />
 
       <section className="py-5">
         <div className="container">
-          <div className="row g-4">
 
-            {/* LEFT */}
-            <div className="col-md-8">
+          <div className="mb-4">
+            <button
+              onClick={() => navigate(-1)}
+              className="btn btn-outline-secondary btn-sm"
+            >
+              ← Back to Courses
+            </button>
+          </div>
+          <div className="row g-4 align-items-start">
+
+            {/* LEFT – SYLLABUS */}
+            <div className="col-lg-8">
               <h5 className="fw-bold mb-3">Course Syllabus</h5>
 
               {course.syllabus?.map((mod, index) => (
-                <div className="mb-4" key={index}>
-                  <h6 className="fw-bold">
-                    Module {index + 1}: {mod.module}
-                  </h6>
-                  <ul className="list-group">
-                    {mod.topics?.map((topic, i) => (
-                      <li className="list-group-item" key={i}>
-                        {topic}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="card shadow-sm border-0 mb-4" key={index}>
+                  <div className="card-body">
+
+                    <h6 className="fw-bold mb-3">
+                      Module {index + 1}: {mod.module}
+                    </h6>
+
+                    <ul className="list-group list-group-flush small">
+                      {mod.topics?.map((topic, i) => (
+                        <li className="list-group-item px-0" key={i}>
+                          {topic}
+                        </li>
+                      ))}
+                    </ul>
+
+                  </div>
                 </div>
               ))}
             </div>
 
-            {/* RIGHT */}
-            <div className="col-md-4">
-              <div className="card shadow-sm">
-                <div className="card-body">
-                  <h6 className="fw-bold mb-3">Course Details</h6>
+            {/* RIGHT – COURSE INFO */}
+            <div className="col-lg-4">
+              <div className="card shadow-sm border-0 sticky-top" style={{ top: '90px' }}>
+                <div className="card-body p-4">
 
-                  <ul className="list-unstyled small">
-                    <li><strong>Duration:</strong> {course.duration}</li>
-                    <li><strong>Eligibility:</strong> {course.eligibility}</li>
-                    <li><strong>Authority:</strong> {course.authority}</li>
-                    <li><strong>Certificate:</strong> {course.certificate}</li>
-                    <li><strong>Verification:</strong> {course.verify}</li>
+                  <h6 className="fw-bold mb-3">Course Information</h6>
+
+                  <ul className="list-unstyled small mb-4">
+                    <li className="mb-2">
+                      <strong>Duration:</strong> {course.duration}
+                    </li>
+                    <li className="mb-2">
+                      <strong>Eligibility:</strong> {course.eligibility}
+                    </li>
+                    <li className="mb-2">
+                      <strong>Authority:</strong> {course.authority}
+                    </li>
+                    <li className="mb-2">
+                      <strong>Certificate:</strong> {course.certificate}
+                    </li>
+                    <li>
+                      <strong>Verification:</strong> {course.verify}
+                    </li>
                   </ul>
+
+                  <a
+                    href="/enquiry"
+                    className="btn btn-primary w-100"
+                  >
+                    Enquire About This Course
+                  </a>
+
                 </div>
               </div>
             </div>
@@ -97,6 +131,7 @@ const CourseDetails = () => {
           </div>
         </div>
       </section>
+
     </>
   )
 }

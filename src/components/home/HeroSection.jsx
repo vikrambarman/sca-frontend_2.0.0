@@ -78,7 +78,7 @@ const HeroSection = () => {
               Explore Courses
             </Link>
 
-            <Link to="/verify" className="btn btn-outline-light px-4">
+            <Link to="/certificate-verify" className="btn btn-outline-light px-4">
               Verify Certificate
             </Link>
           </div>

@@ -1,123 +1,186 @@
 import { NavLink } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import api from '../../services/api'
 
 const Navbar = () => {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-            <div className="container">
+  const [courses, setCourses] = useState([])
 
-                {/* Logo */}
-                <NavLink to="/" className="navbar-brand d-flex align-items-center gap-2">
-                    <img
-                        src="/logo.png"
-                        alt="Shivshakti Computer Academy"
-                        height="36"
-                    />
-                    <span className="fw-bold text-dark d-none d-sm-inline">
-                        Shivshakti Computer Academy
-                    </span>
-                </NavLink>
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const res = await api.get('/courses')
+        if (res.data && res.data.length > 0) {
+          setCourses(res.data)
+        }
+      } catch (err) {
+        console.warn('Failed to load courses in navbar')
+      }
+    }
 
-                {/* Toggle */}
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#mainNavbar"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+    fetchCourses()
+  }, [])
 
-                {/* Menu */}
-                <div className="collapse navbar-collapse" id="mainNavbar">
-                    <ul className="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+  return (
+    <nav className="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+      <div className="container">
 
-                        <li className="nav-item">
-                            <NavLink to="/" className="nav-link">Home</NavLink>
-                        </li>
-
-                        <li className="nav-item">
-                            <NavLink to="/about" className="nav-link">About</NavLink>
-                        </li>
-
-                        {/* Courses Dropdown */}
-                        <li className="nav-item dropdown">
-                            <span
-                                className="nav-link dropdown-toggle"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                            >
-                                Courses
-                            </span>
-                            <ul className="dropdown-menu">
-                                <li>
-                                    <NavLink to="/courses" className="dropdown-item">
-                                        All Courses
-                                    </NavLink>
-                                </li>
-                                <li><hr className="dropdown-divider" /></li>
-                                <li><NavLink to="/courses/dca" className="dropdown-item">DCA</NavLink></li>
-                                <li><NavLink to="/courses/adca" className="dropdown-item">ADCA</NavLink></li>
-                                <li><NavLink to="/courses/tally" className="dropdown-item">Tally</NavLink></li>
-                            </ul>
-                        </li>
-
-                        <li className="nav-item">
-                            <NavLink to="/accreditation" className="nav-link">Accreditation</NavLink>
-                        </li>
-
-                        <li className="nav-item">
-                            <NavLink to="/gallery" className="nav-link">Gallery</NavLink>
-                        </li>
-
-                        <li className="nav-item">
-                            <NavLink to="/certificate-verify" className="nav-link">
-                                Verify Certificate
-                            </NavLink>
-                        </li>
-
-                        <li className="nav-item">
-                            <NavLink to="/contact" className="nav-link">Contact Us</NavLink>
-                        </li>
-                    </ul>
-
-                    {/* Right Section */}
-                    <div className="d-flex align-items-center gap-2">
-
-                        {/* Login Dropdown */}
-                        <div className="dropdown">
-                            <button
-                                className="btn btn-outline-secondary btn-sm dropdown-toggle"
-                                data-bs-toggle="dropdown"
-                            >
-                                Login
-                            </button>
-                            <ul className="dropdown-menu dropdown-menu-end">
-                                <li>
-                                    <NavLink to="/student/login" className="dropdown-item">
-                                        Student Login
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/admin/login" className="dropdown-item">
-                                        Admin Login
-                                    </NavLink>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <NavLink to="/enquiry" className="btn btn-primary btn-sm">
-                            Enquiry
-                        </NavLink>
-
-                        <NavLink to="/registration" className="btn btn-outline-primary btn-sm">
-                            Register
-                        </NavLink>
-                    </div>
-
-                </div>
+        {/* LOGO */}
+        <NavLink
+          to="/"
+          className="navbar-brand d-flex align-items-center gap-2"
+        >
+          <img
+            src="/logo.png"
+            alt="Shivshakti Computer Academy"
+            height="38"
+          />
+          <div className="lh-sm d-none d-sm-block">
+            <div className="fw-bold text-dark">
+              Shivshakti Computer Academy
             </div>
-        </nav>
-    )
+            <small className="text-muted">
+              Authorized Skill Training Institute
+            </small>
+          </div>
+        </NavLink>
+
+        {/* TOGGLE */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        {/* MENU */}
+        <div className="collapse navbar-collapse" id="mainNavbar">
+          <ul className="navbar-nav mx-auto gap-lg-2">
+
+            <li className="nav-item">
+              <NavLink to="/" className="nav-link">
+                Home
+              </NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink to="/about" className="nav-link">
+                About
+              </NavLink>
+            </li>
+
+            {/* COURSES DROPDOWN */}
+            <li className="nav-item dropdown">
+              <span
+                className="nav-link dropdown-toggle"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                Courses
+              </span>
+
+              <ul className="dropdown-menu shadow-sm border-0">
+
+                <li>
+                  <NavLink to="/courses" className="dropdown-item fw-semibold">
+                    View All Courses
+                  </NavLink>
+                </li>
+
+                <li>
+                  <hr className="dropdown-divider" />
+                </li>
+
+                {courses.map(course => (
+                  <li key={course.slug}>
+                    <NavLink
+                      to={`/courses/${course.slug}`}
+                      className="dropdown-item"
+                    >
+                      {course.name}
+                    </NavLink>
+                  </li>
+                ))}
+
+                {courses.length === 0 && (
+                  <li className="px-3 py-2 small text-muted">
+                    Courses loading...
+                  </li>
+                )}
+              </ul>
+            </li>
+
+            <li className="nav-item">
+              <NavLink to="/accreditation" className="nav-link">
+                Accreditation
+              </NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink to="/gallery" className="nav-link">
+                Gallery
+              </NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink to="/certificate-verify" className="nav-link">
+                Verify Certificate
+              </NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink to="/contact" className="nav-link">
+                Contact
+              </NavLink>
+            </li>
+          </ul>
+
+          {/* RIGHT ACTIONS */}
+          <div className="d-flex align-items-center gap-2">
+
+            {/* LOGIN */}
+            <div className="dropdown">
+              <button
+                className="btn btn-outline-secondary btn-sm dropdown-toggle"
+                data-bs-toggle="dropdown"
+              >
+                Login
+              </button>
+
+              <ul className="dropdown-menu dropdown-menu-end shadow-sm">
+                <li>
+                  <NavLink
+                    to="/student/login"
+                    className="dropdown-item"
+                  >
+                    Student Login
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/admin/login"
+                    className="dropdown-item"
+                  >
+                    Admin Login
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+
+            {/* ENQUIRY CTA */}
+            <NavLink
+              to="/enquiry"
+              className="btn btn-primary btn-sm px-3"
+            >
+              Enquiry
+            </NavLink>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+  )
 }
 
 export default Navbar

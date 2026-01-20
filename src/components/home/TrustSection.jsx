@@ -49,7 +49,7 @@ const TrustSection = () => {
                         >
                             <FaUserGraduate size={32} className="text-success mb-3" />
                             <h3 className="fw-bold mb-0">
-                                <CountUp end={2000} duration={2} />+
+                                <CountUp end={1000} duration={2} />+
                             </h3>
                             <p className="small text-muted mb-0">
                                 Students Trained Successfully

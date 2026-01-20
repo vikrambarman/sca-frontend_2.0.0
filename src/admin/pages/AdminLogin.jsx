@@ -1,10 +1,15 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
+import PageHeader from '../../components/common/PageHeader'
 
 const AdminLogin = () => {
     const navigate = useNavigate()
-    const [form, setForm] = useState({ username: '', password: '' })
+
+    const [form, setForm] = useState({
+        username: '',
+        password: ''
+    })
 
     const handleChange = e => {
         setForm({ ...form, [e.target.name]: e.target.value })
@@ -12,6 +17,7 @@ const AdminLogin = () => {
 
     const handleSubmit = async e => {
         e.preventDefault()
+
         try {
             const res = await axios.post(
                 'http://localhost:5000/api/admin/login',
@@ -21,46 +27,89 @@ const AdminLogin = () => {
             localStorage.setItem('adminToken', res.data.token)
             navigate('/admin/dashboard')
         } catch {
-            alert('Invalid credentials')
+            alert('Invalid username or password')
         }
     }
 
     return (
-        <div className="container py-5">
-            <div className="row justify-content-center">
-                <div className="col-md-4">
-                    <div className="card shadow-sm">
-                        <div className="card-body">
-                            <h5 className="fw-bold mb-4 text-center">
-                                Admin Login
-                            </h5>
+        <>
+            <PageHeader
+                title="Admin Login"
+                subtitle="Authorized access only"
+            />
 
-                            <form onSubmit={handleSubmit}>
-                                <input
-                                    name="username"
-                                    className="form-control mb-3"
-                                    placeholder="Username"
-                                    onChange={handleChange}
-                                    required
-                                />
-                                <input
-                                    name="password"
-                                    type="password"
-                                    className="form-control mb-3"
-                                    placeholder="Password"
-                                    onChange={handleChange}
-                                    required
-                                />
-                                <button className="btn btn-dark w-100">
-                                    Login
-                                </button>
-                            </form>
+            <section className="py-5">
+                <div className="container">
+                    <div className="row justify-content-center">
 
+                        <div className="col-md-5 col-lg-4">
+                            <div className="card shadow-sm border-0">
+                                <div className="card-body p-4">
+
+                                    <h5 className="fw-bold text-center mb-2">
+                                        Admin Portal
+                                    </h5>
+
+                                    <p className="text-muted small text-center mb-4">
+                                        Please login using your admin credentials
+                                    </p>
+
+                                    <form onSubmit={handleSubmit}>
+
+                                        <div className="mb-3">
+                                            <label className="form-label">
+                                                Username
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="username"
+                                                className="form-control"
+                                                placeholder="Enter admin username"
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                        </div>
+
+                                        <div className="mb-4">
+                                            <label className="form-label">
+                                                Password
+                                            </label>
+                                            <input
+                                                type="password"
+                                                name="password"
+                                                className="form-control"
+                                                placeholder="Enter password"
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                        </div>
+
+                                        <button
+                                            type="submit"
+                                            className="btn btn-dark w-100"
+                                        >
+                                            Login to Admin Panel
+                                        </button>
+
+                                    </form>
+
+                                    <div className="text-center mt-4 small text-muted">
+                                        <p className="mb-1">
+                                            Forgot your credentials?
+                                        </p>
+                                        <Link to="/contact">
+                                            Contact system administrator
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </>
     )
 }
 

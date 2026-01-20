@@ -43,7 +43,7 @@ const HomeCTA = () => {
                                 </Link>
 
                                 <Link
-                                    to="/contact"
+                                    to="/enquiry"
                                     className="btn btn-outline-light fw-semibold px-4"
                                 >
                                     Admission Enquiry

@@ -2,34 +2,42 @@ import { NavLink } from 'react-router-dom'
 
 const CourseLevel = ({ data }) => {
     return (
-        <section className="py-5">
+        <section className="py-5 bg-light border-top">
             <div className="container">
 
+                {/* Level Header */}
                 <div className="mb-4">
-                    <h3 className="fw-bold">{data.level}</h3>
+                    <h3 className="fw-bold mb-1">{data.level}</h3>
                     <p className="text-muted mb-1">
                         <strong>Authority:</strong> {data.authority}
                     </p>
-                    <p className="small text-muted">
-                        <strong>Verification:</strong> {data.verify}
+                    <p className="small text-muted mb-0">
+                        <strong>Certificate Verification:</strong> {data.verify}
                     </p>
                 </div>
 
+                {/* Courses */}
                 <div className="row g-4">
                     {data.courses.map(course => (
                         <div className="col-md-4" key={course.slug}>
-                            <div className="card h-100 shadow-sm">
-                                <div className="card-body">
-                                    <h6 className="fw-bold">{course.name}</h6>
+                            <div className="card h-100 shadow-sm border-0 course-card">
+
+                                <div className="card-body p-4">
+                                    <h6 className="fw-bold mb-2">{course.name}</h6>
+                                    <p className="small text-muted mb-0">
+                                        Government recognized certification program
+                                    </p>
                                 </div>
-                                <div className="card-footer bg-white border-0">
+
+                                <div className="card-footer bg-white border-0 px-4 pb-4">
                                     <NavLink
                                         to={`/courses/${course.slug}`}
-                                        className="btn btn-sm btn-primary w-100"
+                                        className="btn btn-outline-primary btn-sm w-100"
                                     >
-                                        View Details
+                                        View Course Details
                                     </NavLink>
                                 </div>
+
                             </div>
                         </div>
                     ))}

@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
+import PageHeader from '../components/common/PageHeader'
 
 const StudentLogin = () => {
     const navigate = useNavigate()
+
     const [form, setForm] = useState({
         rollNumber: '',
         mobile: ''
@@ -30,47 +32,89 @@ const StudentLogin = () => {
 
             navigate('/student/dashboard')
         } catch {
-            alert('Invalid roll number or mobile')
+            alert('Invalid roll number or registered mobile number')
         }
     }
 
     return (
-        <div className="container py-5">
-            <div className="row justify-content-center">
-                <div className="col-md-4">
-                    <div className="card shadow-sm">
-                        <div className="card-body">
-                            <h5 className="fw-bold mb-4 text-center">
-                                Student Login
-                            </h5>
+        <>
+            <PageHeader
+                title="Student Login"
+                subtitle="Access your dashboard, courses and certificates"
+            />
 
-                            <form onSubmit={handleSubmit}>
-                                <input
-                                    name="rollNumber"
-                                    className="form-control mb-3"
-                                    placeholder="Roll Number"
-                                    onChange={handleChange}
-                                    required
-                                />
+            <section className="py-5">
+                <div className="container">
+                    <div className="row justify-content-center">
 
-                                <input
-                                    name="mobile"
-                                    className="form-control mb-3"
-                                    placeholder="Registered Mobile"
-                                    onChange={handleChange}
-                                    required
-                                />
+                        <div className="col-md-5 col-lg-4">
+                            <div className="card shadow-sm border-0">
+                                <div className="card-body p-4">
 
-                                <button className="btn btn-primary w-100">
-                                    Login
-                                </button>
-                            </form>
+                                    <h5 className="fw-bold text-center mb-2">
+                                        Student Portal Login
+                                    </h5>
 
+                                    <p className="text-muted small text-center mb-4">
+                                        Login using your roll number and registered mobile number
+                                    </p>
+
+                                    <form onSubmit={handleSubmit}>
+
+                                        <div className="mb-3">
+                                            <label className="form-label">
+                                                Roll Number
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="rollNumber"
+                                                className="form-control"
+                                                placeholder="Enter your roll number"
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                        </div>
+
+                                        <div className="mb-4">
+                                            <label className="form-label">
+                                                Registered Mobile Number
+                                            </label>
+                                            <input
+                                                type="tel"
+                                                name="mobile"
+                                                className="form-control"
+                                                placeholder="Enter registered mobile number"
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                        </div>
+
+                                        <button
+                                            type="submit"
+                                            className="btn btn-primary w-100"
+                                        >
+                                            Login to Dashboard
+                                        </button>
+
+                                    </form>
+
+                                    <div className="text-center mt-4 small text-muted">
+                                        <p className="mb-1">
+                                            Facing issues logging in?
+                                        </p>
+                                        <Link to="/contact">
+                                            Contact institute support
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </>
     )
 }
 

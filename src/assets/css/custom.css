@@ -5,15 +5,15 @@
 
 /* Footer Styles */
 .footer-link {
-    color: #adb5bd;
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 6px;
+  color: #adb5bd;
+  text-decoration: none;
 }
 
 .footer-link:hover {
-    color: #ffffff;
+  color: #ffffff;
+  text-decoration: underline;
 }
+
 
 /* WhatsApp Floating Button */
 .whatsapp-float {
@@ -33,3 +33,41 @@
 .whatsapp-float img:hover {
   transform: scale(1.05);
 }
+
+
+/* Gallery Sections */
+.gallery-card {
+  cursor: pointer;
+}
+
+.gallery-img {
+  transition: transform 0.6s ease;
+}
+
+.gallery-card:hover .gallery-img {
+  transform: scale(1.08);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.05)
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+}
+
+
+/* Course Layout */
+.course-card:hover {
+  transform: translateY(-4px);
+  transition: 0.25s ease;
+}
+

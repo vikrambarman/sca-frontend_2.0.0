@@ -23,7 +23,7 @@ const Notices = () => {
           _id: 1,
           title: 'Academy Picnic – December 27',
           desc: 'Shivshakti Computer Academy ke students ke saath annual picnic successfully organized.',
-          date: '27 Dec 2024'
+          date: '27 Dec 2025'
         },
         {
           _id: 2,
