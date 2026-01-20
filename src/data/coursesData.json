@@ -1,0 +1,53 @@
+[
+  {
+    "_id": "69689fc9af6618bd87d5e002",
+    "name": "Diploma in Computer Application",
+    "slug": "dca",
+    "level": "Diploma Courses",
+    "authority": "Gramin Skill Development Mission",
+    "verification": "NSDC + DigiLocker",
+    "duration": "900 hrs.",
+    "eligibility": "12th",
+    "certificate": "",
+    "syllabus": [
+      {
+        "module": "Fundamentals of Computer",
+        "topics": [
+          "What is Computer?",
+          "History Of Computer",
+          "Generation of Computers",
+          "Difference Between Hardware & Software",
+          "Windows Operating System"
+        ],
+        "_id": "6968a4674759dbb842be1599"
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "_id": "6968a5144759dbb842be15b8",
+    "name": "Post  Graduate Diplome in Computer Application",
+    "slug": "pgdca",
+    "level": "Diploma Courses",
+    "authority": "Gramin Skill Development Mission",
+    "verification": "NSDC + DigiLocker",
+    "duration": "1200 hrs.",
+    "eligibility": "Graduate",
+    "certificate": "",
+    "syllabus": [],
+    "isActive": true
+  },
+  {
+    "_id": "6968a6924759dbb842be15dc",
+    "name": "Tally Prime",
+    "slug": "tally",
+    "level": "Foundation Courses",
+    "authority": "Drishti Computer Education",
+    "verification": "Institute Certificate",
+    "duration": "3 Months",
+    "eligibility": "10th",
+    "certificate": "",
+    "syllabus": [],
+    "isActive": true
+  }
+]

@@ -6,19 +6,19 @@ import api from '../services/api'
 
 const CourseDetails = () => {
   const { slug } = useParams()
+  const navigate = useNavigate()
 
   const [course, setCourse] = useState(null)
   const [loading, setLoading] = useState(true)
-  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchCourse = async () => {
       try {
-        // 1️⃣ Try backend first
+        // 1️⃣ Backend first
         const res = await api.get(`/courses/${slug}`)
         setCourse(res.data)
       } catch (error) {
-        // 2️⃣ Backend failed → fallback to frontend data
+        // 2️⃣ Frontend fallback (static JSON)
         const localCourse = getCourseBySlug(slug)
         setCourse(localCourse)
       } finally {
@@ -65,55 +65,73 @@ const CourseDetails = () => {
               ← Back to Courses
             </button>
           </div>
+
           <div className="row g-4 align-items-start">
 
             {/* LEFT – SYLLABUS */}
             <div className="col-lg-8">
               <h5 className="fw-bold mb-3">Course Syllabus</h5>
 
-              {course.syllabus?.map((mod, index) => (
-                <div className="card shadow-sm border-0 mb-4" key={index}>
-                  <div className="card-body">
+              {Array.isArray(course.syllabus) && course.syllabus.length > 0 ? (
+                course.syllabus.map((mod, index) => (
+                  <div
+                    className="card shadow-sm border-0 mb-4"
+                    key={mod._id || index}
+                  >
+                    <div className="card-body">
 
-                    <h6 className="fw-bold mb-3">
-                      Module {index + 1}: {mod.module}
-                    </h6>
+                      <h6 className="fw-bold mb-3">
+                        Module {index + 1}: {mod.module}
+                      </h6>
 
-                    <ul className="list-group list-group-flush small">
-                      {mod.topics?.map((topic, i) => (
-                        <li className="list-group-item px-0" key={i}>
-                          {topic}
-                        </li>
-                      ))}
-                    </ul>
+                      <ul className="list-group list-group-flush small">
+                        {Array.isArray(mod.topics) &&
+                          mod.topics.map((topic, i) => (
+                            <li
+                              className="list-group-item px-0"
+                              key={i}
+                            >
+                              {topic}
+                            </li>
+                          ))
+                        }
+                      </ul>
 
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))
+              ) : (
+                <p className="text-muted small">
+                  Syllabus will be provided during admission.
+                </p>
+              )}
             </div>
 
             {/* RIGHT – COURSE INFO */}
             <div className="col-lg-4">
-              <div className="card shadow-sm border-0 sticky-top" style={{ top: '90px' }}>
+              <div
+                className="card shadow-sm border-0 sticky-top"
+                style={{ top: '90px' }}
+              >
                 <div className="card-body p-4">
 
                   <h6 className="fw-bold mb-3">Course Information</h6>
 
                   <ul className="list-unstyled small mb-4">
                     <li className="mb-2">
-                      <strong>Duration:</strong> {course.duration}
+                      <strong>Duration:</strong> {course.duration || '—'}
                     </li>
                     <li className="mb-2">
-                      <strong>Eligibility:</strong> {course.eligibility}
+                      <strong>Eligibility:</strong> {course.eligibility || '—'}
                     </li>
                     <li className="mb-2">
-                      <strong>Authority:</strong> {course.authority}
+                      <strong>Authority:</strong> {course.authority || '—'}
                     </li>
                     <li className="mb-2">
-                      <strong>Certificate:</strong> {course.certificate}
+                      <strong>Certificate:</strong> {course.certificate || '—'}
                     </li>
                     <li>
-                      <strong>Verification:</strong> {course.verify}
+                      <strong>Verification:</strong> {course.verification || '—'}
                     </li>
                   </ul>
 
@@ -131,7 +149,6 @@ const CourseDetails = () => {
           </div>
         </div>
       </section>
-
     </>
   )
 }

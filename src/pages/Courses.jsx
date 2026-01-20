@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import CourseLevel from '../components/courses/CourseLevel'
 import PageHeader from '../components/common/PageHeader'
-import coursesData from '../data/coursesData'
+import coursesData from '../data/coursesData.json'
 import api from '../services/api'
 import groupCoursesByLevel from '../utils/groupCoursesByLevel'
 
@@ -9,23 +9,42 @@ const Courses = () => {
   const [levels, setLevels] = useState([])
   const [loading, setLoading] = useState(true)
 
+  // useEffect(() => {
+  //   const fetchCourses = async () => {
+  //     try {
+  //       // 1️⃣ Try backend
+  //       const res = await api.get('/courses')
+
+  //       if (res.data && res.data.length > 0) {
+  //         const grouped = groupCoursesByLevel(res.data)
+  //         setLevels(grouped)
+  //       } else {
+  //         // empty response fallback
+  //         setLevels(coursesData)
+  //       }
+  //     } catch (error) {
+  //       // 2️⃣ Backend failed → frontend fallback
+  //       console.warn('Backend failed, using frontend course data')
+  //       setLevels(coursesData)
+  //     } finally {
+  //       setLoading(false)
+  //     }
+  //   }
+
+  //   fetchCourses()
+  // }, [])
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        // 1️⃣ Try backend
         const res = await api.get('/courses')
 
-        if (res.data && res.data.length > 0) {
-          const grouped = groupCoursesByLevel(res.data)
-          setLevels(grouped)
+        if (res.data?.length) {
+          setLevels(groupCoursesByLevel(res.data))
         } else {
-          // empty response fallback
-          setLevels(coursesData)
+          setLevels(groupCoursesByLevel(coursesData))
         }
-      } catch (error) {
-        // 2️⃣ Backend failed → frontend fallback
-        console.warn('Backend failed, using frontend course data')
-        setLevels(coursesData)
+      } catch {
+        setLevels(groupCoursesByLevel(coursesData))
       } finally {
         setLoading(false)
       }
@@ -33,6 +52,7 @@ const Courses = () => {
 
     fetchCourses()
   }, [])
+
 
   if (loading) {
     return (

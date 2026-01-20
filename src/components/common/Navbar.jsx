@@ -20,6 +20,7 @@ const Navbar = () => {
     fetchCourses()
   }, [])
 
+
   return (
     <nav className="navbar navbar-expand-lg bg-white border-bottom sticky-top">
       <div className="container">
