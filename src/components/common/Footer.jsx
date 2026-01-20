@@ -34,7 +34,7 @@ const Footer = () => {
               <li><NavLink to="/" className="footer-link">Home</NavLink></li>
               <li><NavLink to="/about" className="footer-link">About</NavLink></li>
               <li><NavLink to="/courses" className="footer-link">Courses</NavLink></li>
-              <li><NavLink to="/manyatain" className="footer-link">Manyatain</NavLink></li>
+              <li><NavLink to="/accreditation" className="footer-link">Accreditation</NavLink></li>
               <li><NavLink to="/gallery" className="footer-link">Gallery</NavLink></li>
             </ul>
           </div>
