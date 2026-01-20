@@ -8,31 +8,7 @@ import groupCoursesByLevel from '../utils/groupCoursesByLevel'
 const Courses = () => {
   const [levels, setLevels] = useState([])
   const [loading, setLoading] = useState(true)
-
-  // useEffect(() => {
-  //   const fetchCourses = async () => {
-  //     try {
-  //       // 1️⃣ Try backend
-  //       const res = await api.get('/courses')
-
-  //       if (res.data && res.data.length > 0) {
-  //         const grouped = groupCoursesByLevel(res.data)
-  //         setLevels(grouped)
-  //       } else {
-  //         // empty response fallback
-  //         setLevels(coursesData)
-  //       }
-  //     } catch (error) {
-  //       // 2️⃣ Backend failed → frontend fallback
-  //       console.warn('Backend failed, using frontend course data')
-  //       setLevels(coursesData)
-  //     } finally {
-  //       setLoading(false)
-  //     }
-  //   }
-
-  //   fetchCourses()
-  // }, [])
+  
   useEffect(() => {
     const fetchCourses = async () => {
       try {
