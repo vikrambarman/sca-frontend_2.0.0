@@ -5,7 +5,7 @@
     "slug": "dca",
     "level": "Diploma Courses",
     "authority": "Gramin Skill Development Mission",
-    "verification": "NSDC + DigiLocker",
+    "verification": "GSDM + NSDC + DigiLocker",
     "duration": "900 hrs.",
     "eligibility": "12th",
     "certificate": "",
@@ -33,19 +33,6 @@
     "verification": "NSDC + DigiLocker",
     "duration": "1200 hrs.",
     "eligibility": "Graduate",
-    "certificate": "",
-    "syllabus": [],
-    "isActive": true
-  },
-  {
-    "_id": "6968a6924759dbb842be15dc",
-    "name": "Tally Prime",
-    "slug": "tally",
-    "level": "Foundation Courses",
-    "authority": "Drishti Computer Education",
-    "verification": "Institute Certificate",
-    "duration": "3 Months",
-    "eligibility": "10th",
     "certificate": "",
     "syllabus": [],
     "isActive": true
