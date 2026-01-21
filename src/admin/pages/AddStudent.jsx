@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import api from '../../services/api'
 
 const AddStudent = () => {
     const navigate = useNavigate()
@@ -17,7 +17,7 @@ const AddStudent = () => {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/courses?admin=true', {
+                const res = await api.get('/courses?admin=true', {
                     headers: { Authorization: `Bearer ${localStorage.getItem('adminToken')}` }
                 })
                 setCourses(res.data)
@@ -36,8 +36,7 @@ const AddStudent = () => {
         e.preventDefault()
 
         try {
-            await axios.post(
-                'http://localhost:5000/api/students',
+            await api.post('/students',
                 form,
                 {
                     headers: {

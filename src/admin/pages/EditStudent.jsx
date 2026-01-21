@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import api from '../../services/api'
 
 const EditStudent = () => {
     const { id } = useParams()
@@ -41,8 +41,8 @@ const EditStudent = () => {
     }, [])
 
     const fetchStudent = async () => {
-        const res = await axios.get(
-            `http://localhost:5000/api/students/${id}`,
+        const res = await api.get(
+            `/students/${id}`,
             {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('adminToken')}`
@@ -55,7 +55,7 @@ const EditStudent = () => {
 
     const fetchCourses = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/courses?admin=true', {
+            const res = await api.get('/courses?admin=true', {
                 headers: { Authorization: `Bearer ${localStorage.getItem('adminToken')}` }
             })
             setCourses(res.data)
@@ -67,8 +67,8 @@ const EditStudent = () => {
     const handleSubmit = async e => {
         e.preventDefault()
 
-        await axios.put(
-            `http://localhost:5000/api/students/${id}`,
+        await api.put(
+            `/students/${id}`,
             form,
             {
                 headers: {
@@ -79,6 +79,28 @@ const EditStudent = () => {
 
         navigate('/admin/students')
     }
+
+    const handleDelete = async () => {
+        const confirmDelete = window.confirm(
+            'Are you sure you want to permanently delete this student?'
+        )
+
+        if (!confirmDelete) return
+
+        try {
+            await api.delete(`/students/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('adminToken')}`
+                }
+            })
+
+            navigate('/admin/students')
+        } catch (err) {
+            console.error('Failed to delete student', err)
+            alert('Failed to delete student. Please try again.')
+        }
+    }
+
 
     if (loading) return <p>Loading student details...</p>
 
@@ -377,11 +399,20 @@ const EditStudent = () => {
                     </div>
                 </div>
 
-                <div className="col-12 mt-4">
-                    <button className="btn btn-primary">
+                <div className="col-12 mt-4 d-flex justify-content-between">
+                    <button type="submit" className="btn btn-primary">
                         Update Student
                     </button>
+
+                    <button
+                        type="button"
+                        className="btn btn-danger"
+                        onClick={handleDelete}
+                    >
+                        Delete Student
+                    </button>
                 </div>
+
             </form>
         </>
     )

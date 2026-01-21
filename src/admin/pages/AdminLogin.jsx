@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import axios from 'axios'
 import PageHeader from '../../components/common/PageHeader'
+import api from '../../services/api'
 
 const AdminLogin = () => {
     const navigate = useNavigate()
@@ -19,8 +19,8 @@ const AdminLogin = () => {
         e.preventDefault()
 
         try {
-            const res = await axios.post(
-                'http://localhost:5000/api/admin/login',
+            const res = await api.post(
+                '/admin/login',
                 form
             )
 

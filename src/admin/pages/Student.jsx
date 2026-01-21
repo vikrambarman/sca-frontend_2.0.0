@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
+import api from '../../services/api'
 
 const Students = () => {
     const [students, setStudents] = useState([])
@@ -11,8 +11,8 @@ const Students = () => {
     }, [])
 
     const fetchStudents = async () => {
-        const res = await axios.get(
-            'http://localhost:5000/api/students',
+        const res = await api.get(
+            '/students',
             {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('adminToken')}`

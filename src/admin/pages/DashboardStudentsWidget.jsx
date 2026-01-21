@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
+import api from '../../services/api'
 
 const DashboardStudentsWidget = () => {
     const [students, setStudents] = useState([])
@@ -12,8 +12,8 @@ const DashboardStudentsWidget = () => {
 
     const fetchRecentStudents = async () => {
         try {
-            const res = await axios.get(
-                'http://localhost:5000/api/students?limit=5&sort=desc',
+            const res = await api.get(
+                '/students?limit=5&sort=desc',
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('adminToken')}`

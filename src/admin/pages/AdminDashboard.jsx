@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
 import CountUp from 'react-countup'
 import { motion } from 'framer-motion'
 import { FaUsers, FaBook, FaCertificate, FaClock } from 'react-icons/fa'
@@ -17,6 +16,7 @@ import {
 } from 'recharts'
 
 import DashboardStudentsWidget from './DashboardStudentsWidget'
+import api from '../../services/api'
 
 const AdminDashboard = () => {
     const [data, setData] = useState(null)
@@ -29,8 +29,8 @@ const AdminDashboard = () => {
 
     const fetchDashboard = async () => {
         try {
-            const res = await axios.get(
-                'http://localhost:5000/api/admin/dashboard',
+            const res = await api.get(
+                '/admin/dashboard',
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('adminToken')}`
