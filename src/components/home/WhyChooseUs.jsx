@@ -11,44 +11,48 @@ import {
 const WhyChooseUs = () => {
     const points = [
         {
-            icon: <FaChalkboardTeacher size={28} />,
-            title: '100% Practical Training',
-            desc: 'Theory ke saath real computer practice. Har student ko system par kaam karna sikhaya jata hai.'
+            icon: <FaChalkboardTeacher size={28} aria-hidden="true" />,
+            title: '100% Practical Computer Training',
+            desc: 'Theory ke saath real-time computer practice. Har student ko individual system par hands-on training diya jata hai.'
         },
         {
-            icon: <FaCertificate size={28} />,
+            icon: <FaCertificate size={28} aria-hidden="true" />,
             title: 'Government Recognized Certifications',
-            desc: 'Selected courses Skill India, GSDM aur DigiLocker ke through verified certificates ke saath.'
+            desc: 'Selected computer courses Skill India, GSDM aur DigiLocker ke through verified government certificates ke saath.'
         },
         {
-            icon: <FaLaptopCode size={28} />,
-            title: 'Career Oriented Courses',
-            desc: 'Basic computer se lekar Web Development, Software Development aur professional IT skills tak.'
+            icon: <FaLaptopCode size={28} aria-hidden="true" />,
+            title: 'Career Oriented Computer Courses',
+            desc: 'Basic computer education se lekar Web Development, Software Development aur professional IT skills tak.'
         },
         {
-            icon: <FaUsers size={28} />,
+            icon: <FaUsers size={28} aria-hidden="true" />,
             title: 'Supportive Learning Environment',
-            desc: 'Rural aur urban dono background ke students ke liye friendly aur easy learning system.'
+            desc: 'Rural aur urban dono background ke students ke liye friendly, easy aur supportive learning system.'
         },
         {
-            icon: <FaMapMarkedAlt size={28} />,
-            title: 'Trusted Local Institute',
+            icon: <FaMapMarkedAlt size={28} aria-hidden="true" />,
+            title: 'Trusted Computer Institute in Ambikapur',
             desc: 'Ambikapur, Chhattisgarh me sthit ek vishwasniya aur pehchana hua computer training institute.'
         },
         {
-            icon: <FaBriefcase size={28} />,
+            icon: <FaBriefcase size={28} aria-hidden="true" />,
             title: 'Job & Self-Employment Focus',
-            desc: 'Computer skills jo job ke saath saath freelancing aur self-employment me madad kare.'
+            desc: 'Computer skills jo private job, government opportunities, freelancing aur self-employment me madad kare.'
         }
     ]
 
     return (
-        <section className="py-5 bg-light">
+        <section
+            className="py-5 bg-light"
+            aria-labelledby="why-choose-heading"
+        >
             <div className="container">
 
                 {/* Heading */}
-                <div className="text-center mb-5">
+                <header className="text-center mb-5">
                     <motion.h2
+                        id="why-choose-heading"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
@@ -58,35 +62,36 @@ const WhyChooseUs = () => {
                     </motion.h2>
 
                     <p className="text-muted mt-2">
-                        Practical learning, trusted certifications and career-focused training
+                        Practical computer training, trusted certifications and career-focused education
                     </p>
-                </div>
+                </header>
 
                 <div className="row g-4">
                     {points.map((item, index) => (
                         <div className="col-md-4" key={index}>
-                            <motion.div
+                            <motion.article
                                 initial={{ opacity: 0, y: 25 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
                                 whileHover={{ y: -6 }}
                                 className="card h-100 border-0 shadow-sm"
+                                aria-label={item.title}
                             >
                                 <div className="card-body">
                                     <div className="d-flex align-items-center mb-3">
                                         <div className="me-3 text-primary">
                                             {item.icon}
                                         </div>
-                                        <h6 className="fw-bold mb-0">
+                                        <h3 className="h6 fw-bold mb-0">
                                             {item.title}
-                                        </h6>
+                                        </h3>
                                     </div>
 
                                     <p className="small text-muted mb-0">
                                         {item.desc}
                                     </p>
                                 </div>
-                            </motion.div>
+                            </motion.article>
                         </div>
                     ))}
                 </div>

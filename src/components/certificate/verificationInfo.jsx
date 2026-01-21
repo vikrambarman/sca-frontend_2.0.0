@@ -2,8 +2,7 @@ const VerificationInfo = () => {
     return (
         <div className="card shadow-sm h-100">
             <div className="card-body">
-
-                <h6 className="fw-bold mb-3">About Certificate Verification</h6>
+                <h2 className="fw-bold mb-3">About Certificate Verification</h2> {/* h2 for SEO */}
 
                 <p className="small text-muted">
                     Certificates provided through our institute are issued and verified
@@ -21,16 +20,14 @@ const VerificationInfo = () => {
                     <p className="mb-1">✔ ISO 9001:2015 Certified Institute</p>
                     <p className="mb-1">✔ GSDM Authorized Training Center</p>
                     <p className="mb-1">✔ NSDC & Skill India Aligned Courses</p>
-                    <p className="mb-0">
-                        ✔ Training center verified on GSDM official portal
-                    </p>
+                    <p className="mb-0">✔ Training center verified on GSDM official portal</p>
                 </div>
 
                 <div className="mt-3 d-flex flex-column gap-1">
                     <a
                         href="https://drishticomputer.com/search_centre"
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="small"
                     >
                         Verify our authorization on Drishti Computer Education website →
@@ -39,14 +36,12 @@ const VerificationInfo = () => {
                     <a
                         href="https://graminskill.in/Find_Training_Center.aspx"
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="small"
                     >
                         Verify our authorization on GSDM website →
                     </a>
                 </div>
-
-
             </div>
         </div>
     )

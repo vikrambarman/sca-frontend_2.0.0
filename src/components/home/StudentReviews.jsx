@@ -7,16 +7,25 @@ import 'swiper/css/pagination'
 
 const StudentReviews = () => {
     return (
-        <section className="py-5 bg-light">
+        <section
+            className="py-5 bg-light"
+            aria-labelledby="student-reviews-heading"
+        >
             <div className="container">
 
                 {/* HEADER */}
-                <div className="text-center mb-5">
-                    <h4 className="fw-bold">Student Reviews</h4>
+                <header className="text-center mb-5">
+                    <h2
+                        id="student-reviews-heading"
+                        className="fw-bold"
+                    >
+                        Student Reviews & Testimonials
+                    </h2>
+
                     <p className="text-muted small">
-                        Trusted feedback from our students & parents
+                        Genuine feedback from students and parents of Shivshakti Computer Academy, Ambikapur
                     </p>
-                </div>
+                </header>
 
                 {/* CAROUSEL */}
                 <Swiper
@@ -29,25 +38,22 @@ const StudentReviews = () => {
                         768: { slidesPerView: 2 },
                         1024: { slidesPerView: 3 }
                     }}
+                    aria-roledescription="carousel"
                 >
                     {studentReviews.map((r, i) => (
                         <SwiperSlide key={i}>
-                            <div className="card border-0 shadow-sm h-100 rounded-4">
+                            <article
+                                className="card border-0 shadow-sm h-100 rounded-4"
+                                aria-label={`Student review by ${r.author}`}
+                            >
                                 <div className="card-body p-4">
 
                                     {/* USER */}
                                     <div className="d-flex align-items-center mb-3">
-                                        {/* <img
-                                            src={r.profile || '/user.png'}
-                                            alt={r.author}
-                                            width="48"
-                                            height="48"
-                                            className="rounded-circle me-3"
-                                        /> */}
                                         <div>
-                                            <h6 className="mb-0 fw-semibold">
+                                            <h3 className="h6 mb-0 fw-semibold">
                                                 {r.author}
-                                            </h6>
+                                            </h3>
                                             <small className="text-muted">
                                                 Google Review
                                             </small>
@@ -55,9 +61,16 @@ const StudentReviews = () => {
                                     </div>
 
                                     {/* STARS */}
-                                    <div className="mb-2">
+                                    <div
+                                        className="mb-2"
+                                        aria-label={`${r.rating} star rating`}
+                                    >
                                         {[...Array(r.rating)].map((_, idx) => (
-                                            <FaStar key={idx} className="text-warning me-1" />
+                                            <FaStar
+                                                key={idx}
+                                                className="text-warning me-1"
+                                                aria-hidden="true"
+                                            />
                                         ))}
                                     </div>
 
@@ -67,7 +80,7 @@ const StudentReviews = () => {
                                     </p>
 
                                 </div>
-                            </div>
+                            </article>
                         </SwiperSlide>
                     ))}
                 </Swiper>

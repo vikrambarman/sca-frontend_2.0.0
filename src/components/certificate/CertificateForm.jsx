@@ -33,7 +33,6 @@ const VerificationForm = () => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-
         const cert = certificateNo.trim()
         const authority = PORTALS.find(p => p.match.test(cert))
 
@@ -50,25 +49,26 @@ const VerificationForm = () => {
     return (
         <div className="card shadow-sm">
             <div className="card-body">
-
-                <h5 className="fw-bold mb-3">Verify Certificate</h5>
+                <h2 className="fw-bold mb-3">Verify Certificate</h2> {/* h2 for hierarchy */}
 
                 <p className="small text-muted mb-4">
                     Enter your certificate number to proceed to the official verification portal.
                 </p>
 
-                <form onSubmit={submitHandler}>
+                <form onSubmit={submitHandler} aria-label="Certificate verification form">
                     <div className="mb-3">
-                        <label className="form-label">
+                        <label htmlFor="certificateNo" className="form-label">
                             Certificate Number / Registration ID
                         </label>
                         <input
                             type="text"
+                            id="certificateNo"
                             className="form-control"
                             required
                             value={certificateNo}
                             onChange={e => setCertificateNo(e.target.value)}
                             placeholder="Eg: DCE/23/00002345 / GSDM-NSDC-88921"
+                            aria-required="true"
                         />
                     </div>
 
@@ -79,20 +79,19 @@ const VerificationForm = () => {
 
                 {/* RESULT */}
                 {result?.error && (
-                    <div className="alert alert-danger mt-4">
+                    <div className="alert alert-danger mt-4" role="alert">
                         {result.error}
                     </div>
                 )}
 
                 {result?.name && (
-                    <div className="alert alert-info mt-4">
-                        <h6 className="fw-bold mb-1">{result.name}</h6>
+                    <div className="alert alert-info mt-4" role="status">
+                        <h3 className="fw-bold mb-1">{result.name}</h3>
                         <p className="small mb-2">{result.note}</p>
-
                         <a
                             href={result.url}
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
                             className="btn btn-sm btn-outline-primary"
                         >
                             Go to Official Verification Portal
@@ -105,7 +104,6 @@ const VerificationForm = () => {
                     Certificates are issued and verified by respective authorities.
                     Shivshakti Computer Academy acts only as an authorized training partner.
                 </p>
-
             </div>
         </div>
     )

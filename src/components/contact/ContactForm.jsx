@@ -2,30 +2,28 @@ const ContactForm = () => {
     return (
         <div className="card border-0 shadow-sm rounded-4">
             <div className="card-body p-4 p-md-5">
+                <h2 className="fw-semibold mb-3">Send Us a Message</h2> {/* h2 for SEO hierarchy */}
 
-                <h5 className="fw-semibold mb-3">Send Us a Message</h5>
-
-                <form>
+                <form aria-label="Contact form">
                     <div className="row g-3">
-
                         <div className="col-md-6">
-                            <label className="form-label small">Your Name</label>
-                            <input type="text" className="form-control" required />
+                            <label htmlFor="contactName" className="form-label small">Your Name</label>
+                            <input type="text" id="contactName" className="form-control" required aria-required="true" />
                         </div>
 
                         <div className="col-md-6">
-                            <label className="form-label small">Mobile Number</label>
-                            <input type="tel" className="form-control" required />
+                            <label htmlFor="contactMobile" className="form-label small">Mobile Number</label>
+                            <input type="tel" id="contactMobile" className="form-control" required aria-required="true" />
                         </div>
 
                         <div className="col-12">
-                            <label className="form-label small">Email Address</label>
-                            <input type="email" className="form-control" />
+                            <label htmlFor="contactEmail" className="form-label small">Email Address</label>
+                            <input type="email" id="contactEmail" className="form-control" />
                         </div>
 
                         <div className="col-12">
-                            <label className="form-label small">Message</label>
-                            <textarea className="form-control" rows="4"></textarea>
+                            <label htmlFor="contactMessage" className="form-label small">Message</label>
+                            <textarea id="contactMessage" className="form-control" rows="4" />
                         </div>
 
                         <div className="col-12">
@@ -33,10 +31,8 @@ const ContactForm = () => {
                                 Send Message
                             </button>
                         </div>
-
                     </div>
                 </form>
-
             </div>
         </div>
     )

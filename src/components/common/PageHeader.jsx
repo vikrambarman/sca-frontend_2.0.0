@@ -7,21 +7,23 @@ const PageHeader = ({
   breadcrumb = [],
   ctaText,
   ctaLink,
-  bgImage
+  bgImage = "/header.png"
 }) => {
   return (
-    <section className="page-header position-relative overflow-hidden">
+    <header className="page-header position-relative overflow-hidden" role="banner">
       {/* Background */}
       <div
         className="position-absolute top-0 start-0 w-100 h-100"
         style={{
           backgroundImage: bgImage
-            ? `linear-gradient(135deg, rgba(15,23,42,0.85), rgba(2,6,23,0.9)), url(${bgImage})`
+            ? `linear-gradient(to bottom, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.1) 50%, rgba(15,23,42,0.85) 100%), url(${bgImage})`
             : 'linear-gradient(135deg, #0f172a, #020617)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
         }}
+        aria-hidden="true"
       />
+
 
       <div className="container position-relative d-flex align-items-center" style={{ minHeight: '300px' }}>
         <motion.div
@@ -40,12 +42,13 @@ const PageHeader = ({
           >
             {/* Breadcrumb */}
             {breadcrumb.length > 0 && (
-              <nav className="mb-2">
+              <nav aria-label="breadcrumb" className="mb-2">
                 <ol className="breadcrumb small mb-0">
                   {breadcrumb.map((item, i) => (
                     <li
                       key={i}
                       className={`breadcrumb-item ${item.active ? 'text-white' : ''}`}
+                      aria-current={item.active ? 'page' : undefined}
                     >
                       {item.link ? (
                         <Link
@@ -74,6 +77,7 @@ const PageHeader = ({
                 background: 'linear-gradient(90deg, #0d6efd, #22d3ee)',
                 borderRadius: '2px'
               }}
+              aria-hidden="true"
             />
 
             {/* Title */}
@@ -99,6 +103,7 @@ const PageHeader = ({
               <Link
                 to={ctaLink}
                 className="btn btn-primary btn-sm px-4"
+                role="button"
               >
                 {ctaText}
               </Link>
@@ -106,7 +111,7 @@ const PageHeader = ({
           </div>
         </motion.div>
       </div>
-    </section>
+    </header>
   )
 }
 

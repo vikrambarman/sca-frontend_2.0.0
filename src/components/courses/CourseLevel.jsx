@@ -1,8 +1,17 @@
 import { NavLink } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 const CourseLevel = ({ data }) => {
     return (
         <section className="py-5 bg-light border-top">
+            <Helmet>
+                <title>{data.level} Courses | Shivshakti Computer Academy</title>
+                <meta
+                    name="description"
+                    content={`${data.level} programs with government-recognized certifications. Authority: ${data.authority}. Verify certificates via ${data.verify}.`}
+                />
+            </Helmet>
+
             <div className="container">
 
                 {/* Level Header */}
@@ -23,7 +32,7 @@ const CourseLevel = ({ data }) => {
                             <div className="card h-100 shadow-sm border-0 course-card">
 
                                 <div className="card-body p-4">
-                                    <h6 className="fw-bold mb-2">{course.name}</h6>
+                                    <h5 className="fw-bold mb-2">{course.name}</h5>
                                     <p className="small text-muted mb-0">
                                         Government recognized certification program
                                     </p>
@@ -33,6 +42,7 @@ const CourseLevel = ({ data }) => {
                                     <NavLink
                                         to={`/courses/${course.slug}`}
                                         className="btn btn-outline-primary btn-sm w-100"
+                                        aria-label={`View details of ${course.name}`}
                                     >
                                         View Course Details
                                     </NavLink>

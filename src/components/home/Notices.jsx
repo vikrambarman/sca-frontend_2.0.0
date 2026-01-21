@@ -2,21 +2,12 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaBullhorn, FaCalendarAlt } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-// future use ke liye axios import ready
-// import axios from 'axios'
 
 const Notices = () => {
   const [notices, setNotices] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // 🔹 Future backend integration
-    // axios.get('/api/notices').then(res => {
-    //   setNotices(res.data)
-    //   setLoading(false)
-    // })
-
-    // 🔹 Temporary static data
     setTimeout(() => {
       setNotices([
         {
@@ -43,28 +34,50 @@ const Notices = () => {
   }, [])
 
   return (
-    <section className="py-5 bg-white">
+    <section
+      className="py-5 bg-white"
+      aria-labelledby="notices-heading"
+    >
       <div className="container">
 
         {/* Heading */}
-        <div className="d-flex justify-content-between align-items-center mb-4">
+        <header className="d-flex justify-content-between align-items-center mb-4">
           <div>
-            <h4 className="fw-bold mb-1">
+            <h2
+              id="notices-heading"
+              className="fw-bold mb-1"
+            >
               Latest Notices & Updates
-            </h4>
+            </h2>
+
             <p className="text-muted small mb-0">
-              Academy se judi latest information aur announcements
+              Shivshakti Computer Academy ke latest announcements,
+              admissions updates aur official notices
             </p>
           </div>
 
-          <FaBullhorn size={26} className="text-primary" />
-        </div>
+          <FaBullhorn
+            size={26}
+            className="text-primary"
+            aria-hidden="true"
+          />
+        </header>
 
         {/* Content */}
-        {loading && <p>Loading notices...</p>}
+        {loading && (
+          <p
+            className="small text-muted"
+            aria-live="polite"
+          >
+            Loading latest notices...
+          </p>
+        )}
 
         {!loading && notices.length === 0 && (
-          <div className="alert alert-info">
+          <div
+            className="alert alert-info"
+            role="status"
+          >
             No notices available at the moment.
           </div>
         )}
@@ -72,8 +85,11 @@ const Notices = () => {
         {!loading && notices.length > 0 && (
           <div className="row g-4">
             {notices.map((notice, index) => (
-              <div className="col-md-4" key={notice._id}>
-                <motion.div
+              <div
+                className="col-md-4"
+                key={notice._id}
+              >
+                <motion.article
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
@@ -81,14 +97,20 @@ const Notices = () => {
                   className="card h-100 shadow-sm border-0"
                 >
                   <div className="card-body">
+
                     <div className="d-flex align-items-center mb-2 text-muted small">
-                      <FaCalendarAlt className="me-2" />
-                      {notice.date}
+                      <FaCalendarAlt
+                        className="me-2"
+                        aria-hidden="true"
+                      />
+                      <time dateTime={notice.date}>
+                        {notice.date}
+                      </time>
                     </div>
 
-                    <h6 className="fw-bold">
+                    <h3 className="h6 fw-bold">
                       {notice.title}
-                    </h6>
+                    </h3>
 
                     <p className="small text-muted mb-3">
                       {notice.desc}
@@ -97,11 +119,13 @@ const Notices = () => {
                     <Link
                       to="/notices"
                       className="small fw-semibold text-decoration-none"
+                      aria-label={`Read full notice: ${notice.title}`}
                     >
                       Read more →
                     </Link>
+
                   </div>
-                </motion.div>
+                </motion.article>
               </div>
             ))}
           </div>

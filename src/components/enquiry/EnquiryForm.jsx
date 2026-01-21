@@ -2,38 +2,41 @@ const EnquiryForm = () => {
     return (
         <div className="card shadow-sm border-0">
             <div className="card-body p-4">
-
-                <h5 className="fw-bold mb-1">Send Your Enquiry</h5>
+                <h2 className="fw-bold mb-1">Send Your Enquiry</h2> {/* h2 for hierarchy */}
                 <p className="text-muted small mb-4">
                     Fill in the details below and we’ll get back to you shortly.
                 </p>
 
-                <form>
+                <form aria-label="Course enquiry form">
                     <div className="row g-3">
 
                         <div className="col-md-6">
-                            <label className="form-label">Full Name</label>
+                            <label htmlFor="enquiryName" className="form-label">Full Name</label>
                             <input
                                 type="text"
+                                id="enquiryName"
                                 className="form-control"
                                 placeholder="Enter your full name"
                                 required
+                                aria-required="true"
                             />
                         </div>
 
                         <div className="col-md-6">
-                            <label className="form-label">Mobile Number</label>
+                            <label htmlFor="enquiryMobile" className="form-label">Mobile Number</label>
                             <input
                                 type="tel"
+                                id="enquiryMobile"
                                 className="form-control"
                                 placeholder="10-digit mobile number"
                                 required
+                                aria-required="true"
                             />
                         </div>
 
                         <div className="col-md-6">
-                            <label className="form-label">Course Interested In</label>
-                            <select className="form-select">
+                            <label htmlFor="enquiryCourse" className="form-label">Course Interested In</label>
+                            <select id="enquiryCourse" className="form-select">
                                 <option value="">Select course</option>
                                 <option>DCA</option>
                                 <option>ADCA</option>
@@ -43,20 +46,21 @@ const EnquiryForm = () => {
                         </div>
 
                         <div className="col-md-6">
-                            <label className="form-label">Preferred Contact Method</label>
-                            <select className="form-select">
+                            <label htmlFor="enquiryContactMethod" className="form-label">Preferred Contact Method</label>
+                            <select id="enquiryContactMethod" className="form-select">
                                 <option>Phone Call</option>
                                 <option>WhatsApp</option>
                             </select>
                         </div>
 
                         <div className="col-12">
-                            <label className="form-label">Message (Optional)</label>
+                            <label htmlFor="enquiryMessage" className="form-label">Message (Optional)</label>
                             <textarea
+                                id="enquiryMessage"
                                 className="form-control"
                                 rows="3"
                                 placeholder="Any specific question or requirement"
-                            ></textarea>
+                            />
                         </div>
 
                         <div className="col-12 pt-2">
@@ -67,7 +71,6 @@ const EnquiryForm = () => {
 
                     </div>
                 </form>
-
             </div>
         </div>
     )

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { useNavigate, useParams } from 'react-router-dom'
 import PageHeader from '../components/common/PageHeader'
 import getCourseBySlug from '../utils/getCourseBySlug'
@@ -14,11 +15,9 @@ const CourseDetails = () => {
   useEffect(() => {
     const fetchCourse = async () => {
       try {
-        // 1️⃣ Backend first
         const res = await api.get(`/courses/${slug}`)
         setCourse(res.data)
       } catch (error) {
-        // 2️⃣ Frontend fallback (static JSON)
         const localCourse = getCourseBySlug(slug)
         setCourse(localCourse)
       } finally {
@@ -49,6 +48,40 @@ const CourseDetails = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{course.name} | Shivshakti Computer Academy</title>
+        <meta
+          name="description"
+          content={course.metaDescription || `${course.name} course at Shivshakti Computer Academy. Duration: ${course.duration || 'N/A'}. Eligibility: ${course.eligibility || 'N/A'}. Government-recognized certificate.`}
+        />
+        <meta name="robots" content="index, follow" />
+        <link
+          rel="canonical"
+          href={`https://www.shivshakticomputer.in/courses/${slug}`}
+        />
+
+        {/* Structured Data for Course */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": course.name,
+            "description": course.metaDescription || course.name,
+            "provider": {
+              "@type": "EducationalOrganization",
+              "name": "Shivshakti Computer Academy",
+              "sameAs": "https://www.shivshakticomputer.in"
+            },
+            "hasCourseInstance": course.syllabus?.map((mod, idx) => ({
+              "@type": "CourseInstance",
+              "name": mod.module,
+              "courseMode": "Onsite",
+              "instructor": "Shivshakti Computer Academy Faculty"
+            }))
+          })}
+        </script>
+      </Helmet>
+
       <PageHeader
         title={course.name}
         subtitle={`${course.level} Program`}

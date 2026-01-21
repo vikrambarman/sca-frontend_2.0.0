@@ -17,8 +17,7 @@ const Navbar = () => {
                 } else {
                     setCourses(coursesData.filter(c => c.isActive !== false))
                 }
-            } catch (error) {
-                // frontend fallback
+            } catch {
                 setCourses(coursesData.filter(c => c.isActive !== false))
             } finally {
                 setLoading(false)
@@ -28,28 +27,27 @@ const Navbar = () => {
         fetchCourses()
     }, [])
 
-
     return (
-        <nav className="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+        <nav
+            className="navbar navbar-expand-lg bg-white border-bottom sticky-top"
+            aria-label="Main Navigation"
+        >
             <div className="container">
 
                 {/* LOGO */}
                 <NavLink
                     to="/"
                     className="navbar-brand d-flex align-items-center gap-2"
+                    aria-label="Shivshakti Computer Academy Home"
                 >
                     <img
                         src="/logo.png"
-                        alt="Shivshakti Computer Academy"
+                        alt="Shivshakti Computer Academy Logo"
                         height="38"
                     />
                     <div className="lh-sm d-none d-sm-block">
-                        <div className="fw-bold text-dark">
-                            Shivshakti Computer Academy
-                        </div>
-                        <small className="text-muted">
-                            Authorized Skill Training Institute
-                        </small>
+                        <div className="fw-bold text-dark">Shivshakti Computer Academy</div>
+                        <small className="text-muted">Authorized Skill Training Institute</small>
                     </div>
                 </NavLink>
 
@@ -59,6 +57,9 @@ const Navbar = () => {
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
                 >
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -68,15 +69,7 @@ const Navbar = () => {
                     <ul className="navbar-nav mx-auto gap-lg-2">
 
                         <li className="nav-item">
-                            <NavLink to="/" className="nav-link">
-                                Home
-                            </NavLink>
-                        </li>
-
-                        <li className="nav-item">
-                            <NavLink to="/about" className="nav-link">
-                                About
-                            </NavLink>
+                            <NavLink to="/" className="nav-link" aria-current="page">Home</NavLink>
                         </li>
 
                         {/* COURSES DROPDOWN */}
@@ -85,11 +78,12 @@ const Navbar = () => {
                                 className="nav-link dropdown-toggle"
                                 role="button"
                                 data-bs-toggle="dropdown"
+                                aria-expanded="false"
                             >
                                 Courses
                             </span>
 
-                            <ul className="dropdown-menu shadow-sm border-0">
+                            <ul className="dropdown-menu shadow-sm border-0" aria-label="Courses submenu">
 
                                 <li>
                                     <NavLink to="/courses" className="dropdown-item fw-semibold">
@@ -100,9 +94,7 @@ const Navbar = () => {
                                 <li><hr className="dropdown-divider" /></li>
 
                                 {loading && (
-                                    <li className="px-3 py-2 small text-muted">
-                                        Loading courses...
-                                    </li>
+                                    <li className="px-3 py-2 small text-muted">Loading courses...</li>
                                 )}
 
                                 {!loading && courses.map(course => (
@@ -117,35 +109,29 @@ const Navbar = () => {
                                 ))}
 
                                 {!loading && courses.length === 0 && (
-                                    <li className="px-3 py-2 small text-muted">
-                                        No courses available
-                                    </li>
+                                    <li className="px-3 py-2 small text-muted">No courses available</li>
                                 )}
                             </ul>
                         </li>
 
                         <li className="nav-item">
-                            <NavLink to="/accreditation" className="nav-link">
-                                Accreditation
-                            </NavLink>
+                            <NavLink to="/about" className="nav-link">About</NavLink>
                         </li>
 
                         <li className="nav-item">
-                            <NavLink to="/gallery" className="nav-link">
-                                Gallery
-                            </NavLink>
+                            <NavLink to="/accreditation" className="nav-link">Accreditation</NavLink>
                         </li>
 
                         <li className="nav-item">
-                            <NavLink to="/certificate-verify" className="nav-link">
-                                Verify Certificate
-                            </NavLink>
+                            <NavLink to="/gallery" className="nav-link">Gallery</NavLink>
                         </li>
 
                         <li className="nav-item">
-                            <NavLink to="/contact" className="nav-link">
-                                Contact
-                            </NavLink>
+                            <NavLink to="/certificate-verify" className="nav-link">Verify Certificate</NavLink>
+                        </li>
+
+                        <li className="nav-item">
+                            <NavLink to="/contact" className="nav-link">Contact</NavLink>
                         </li>
                     </ul>
 
@@ -157,26 +143,18 @@ const Navbar = () => {
                             <button
                                 className="btn btn-outline-secondary btn-sm dropdown-toggle"
                                 data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                aria-label="Login menu"
                             >
                                 Login
                             </button>
 
-                            <ul className="dropdown-menu dropdown-menu-end shadow-sm">
+                            <ul className="dropdown-menu dropdown-menu-end shadow-sm" aria-label="Login submenu">
                                 <li>
-                                    <NavLink
-                                        to="/student/login"
-                                        className="dropdown-item"
-                                    >
-                                        Student Login
-                                    </NavLink>
+                                    <NavLink to="/student/login" className="dropdown-item">Student Login</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink
-                                        to="/admin/login"
-                                        className="dropdown-item"
-                                    >
-                                        Admin Login
-                                    </NavLink>
+                                    <NavLink to="/admin/login" className="dropdown-item">Admin Login</NavLink>
                                 </li>
                             </ul>
                         </div>
@@ -185,11 +163,11 @@ const Navbar = () => {
                         <NavLink
                             to="/enquiry"
                             className="btn btn-primary btn-sm px-3"
+                            aria-label="Submit course enquiry"
                         >
                             Enquiry
                         </NavLink>
                     </div>
-
                 </div>
             </div>
         </nav>

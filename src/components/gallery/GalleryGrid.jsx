@@ -118,15 +118,13 @@ const images = [
 ]
 
 const GalleryGrid = ({ activeCategory }) => {
-
     const filteredImages =
         activeCategory === 'All'
             ? images
             : images.filter(img => img.category === activeCategory)
 
     return (
-        <div className="row g-4">
-
+        <div className="row g-4" role="list">
             <AnimatePresence>
                 {filteredImages.map(img => (
                     <motion.div
@@ -136,32 +134,25 @@ const GalleryGrid = ({ activeCategory }) => {
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.3 }}
+                        role="listitem"
                     >
                         <div className="gallery-card position-relative overflow-hidden rounded-4 shadow-sm">
-
                             <img
                                 src={img.src}
-                                alt={img.title}
+                                alt={img.title} // SEO alt text
                                 className="img-fluid w-100 gallery-img"
                             />
-
-                            {/* OVERLAY */}
                             <div className="gallery-overlay d-flex flex-column justify-content-end p-3">
-                                <span className="badge bg-primary mb-2 align-self-start">
-                                    {img.category}
-                                </span>
-                                <h6 className="text-white mb-0 small">
-                                    {img.title}
-                                </h6>
+                                <span className="badge bg-primary mb-2 align-self-start">{img.category}</span>
+                                <h6 className="text-white mb-0 small">{img.title}</h6>
                             </div>
-
                         </div>
                     </motion.div>
                 ))}
             </AnimatePresence>
-
         </div>
     )
 }
 
 export default GalleryGrid
+export {images}
