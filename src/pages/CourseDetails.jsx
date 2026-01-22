@@ -52,7 +52,10 @@ const CourseDetails = () => {
         <title>{course.name} | Shivshakti Computer Academy</title>
         <meta
           name="description"
-          content={course.metaDescription || `${course.name} course at Shivshakti Computer Academy. Duration: ${course.duration || 'N/A'}. Eligibility: ${course.eligibility || 'N/A'}. Government-recognized certificate.`}
+          content={
+            course.metaDescription ||
+            `${course.name} course at Shivshakti Computer Academy. Duration: ${course.duration || 'N/A'}. Eligibility: ${course.eligibility || 'N/A'}. Government-recognized certificate.`
+          }
         />
         <meta name="robots" content="index, follow" />
         <link
@@ -60,7 +63,6 @@ const CourseDetails = () => {
           href={`https://www.shivshakticomputer.in/courses/${slug}`}
         />
 
-        {/* Structured Data for Course */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -72,7 +74,7 @@ const CourseDetails = () => {
               "name": "Shivshakti Computer Academy",
               "sameAs": "https://www.shivshakticomputer.in"
             },
-            "hasCourseInstance": course.syllabus?.map((mod, idx) => ({
+            "hasCourseInstance": course.syllabus?.map((mod) => ({
               "@type": "CourseInstance",
               "name": mod.module,
               "courseMode": "Onsite",
@@ -103,9 +105,32 @@ const CourseDetails = () => {
 
             {/* LEFT – SYLLABUS */}
             <div className="col-lg-8">
+
+              {/* 🔹 Designed For */}
+              {Array.isArray(course.designedFor) &&
+                course.designedFor.length > 0 && (
+                  <div className="mb-4">
+                    <h5 className="fw-bold mb-3">
+                      Who Should Join This Course
+                    </h5>
+
+                    <div className="d-flex flex-wrap gap-2">
+                      {course.designedFor.map((item, index) => (
+                        <span
+                          key={index}
+                          className="badge bg-light text-dark border small"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
               <h5 className="fw-bold mb-3">Course Syllabus</h5>
 
-              {Array.isArray(course.syllabus) && course.syllabus.length > 0 ? (
+              {Array.isArray(course.syllabus) &&
+                course.syllabus.length > 0 ? (
                 course.syllabus.map((mod, index) => (
                   <div
                     className="card shadow-sm border-0 mb-4"
@@ -126,8 +151,7 @@ const CourseDetails = () => {
                             >
                               {topic}
                             </li>
-                          ))
-                        }
+                          ))}
                       </ul>
 
                     </div>
@@ -148,7 +172,9 @@ const CourseDetails = () => {
               >
                 <div className="card-body p-4">
 
-                  <h6 className="fw-bold mb-3">Course Information</h6>
+                  <h6 className="fw-bold mb-3">
+                    Course Information
+                  </h6>
 
                   <ul className="list-unstyled small mb-4">
                     <li className="mb-2">

@@ -1,40 +1,62 @@
 [
   {
-    "_id": "69689fc9af6618bd87d5e002",
-    "name": "Diploma in Computer Application",
-    "slug": "dca",
-    "level": "Diploma Courses",
-    "authority": "Gramin Skill Development Mission",
-    "verification": "GSDM + NSDC + DigiLocker",
-    "duration": "900 hrs.",
-    "eligibility": "12th",
-    "certificate": "",
+    "_id": "6971d23dbb794cf60766409f",
+    "name": "Basic Computer Course",
+    "slug": "bcc",
+    "level": "Foundation Courses",
+    "authority": "Drishti Computer Education",
+    "verification": "Drishti Computer Education",
+    "duration": "3 Months",
+    "eligibility": "8th+",
+    "certificate": "Drishti Computer Education",
     "syllabus": [
       {
-        "module": "Fundamentals of Computer",
+        "module": "Computer Basic",
         "topics": [
           "What is Computer?",
-          "History Of Computer",
-          "Generation of Computers",
-          "Difference Between Hardware & Software",
-          "Windows Operating System"
+          "Types of Computers",
+          "Working of Computer",
+          "Input/Output Devices",
+          "Differences between Hardware & Software"
         ],
-        "_id": "6968a4674759dbb842be1599"
+        "_id": "6971d23dbb794cf6076640a0"
+      },
+      {
+        "module": "Windows & File Handling",
+        "topics": [
+          "What are windows and how to use it?",
+          "Folder & File Management",
+          "Use of Pendrives"
+        ],
+        "_id": "6971d23dbb794cf6076640a1"
+      },
+      {
+        "module": "Internet & Digital Works",
+        "topics": [
+          "What is Internet and how to use it?",
+          "Creating Email and use them",
+          "Online form filling",
+          "Use of Government websites"
+        ],
+        "_id": "6971d3c8bb794cf6076640b1"
+      },
+      {
+        "module": "MS Office Basics",
+        "topics": [
+          "MS Word - Explaining interface, Creating documents, Basic formatting. ",
+          "MS Excel - Explaining interface, Basic Concepts of table, Basic formatting and Basic working on functions",
+          "MS PowerPoint - Explaining interface and making ppt"
+        ],
+        "_id": "6971d3c8bb794cf6076640b2"
       }
     ],
-    "isActive": true
-  },
-  {
-    "_id": "6968a5144759dbb842be15b8",
-    "name": "Post  Graduate Diplome in Computer Application",
-    "slug": "pgdca",
-    "level": "Diploma Courses",
-    "authority": "Gramin Skill Development Mission",
-    "verification": "NSDC + DigiLocker",
-    "duration": "1200 hrs.",
-    "eligibility": "Graduate",
-    "certificate": "",
-    "syllabus": [],
-    "isActive": true
+    "isActive": true,
+    "designedFor": [
+      "Absolute Beginners (No prior computer knowledge)",
+      "First-time Computer Learners",
+      "Students seeking basic computer literacy for jobs",
+      "Office / Clerical Job Aspirants",
+      "Private Company / Shop Staff"
+    ]
   }
 ]
