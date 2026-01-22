@@ -105,15 +105,21 @@ const images = [
     },
     {
         id: 18,
-        category: 'Certificates',
-        title: 'Government Certificates',
-        src: '/gallery/certificate1.jpg'
+        category: 'Student Activities',
+        title: 'Group Photo',
+        src: '/gallery/activity1.jpeg'
     },
     {
         id: 19,
         category: 'Student Activities',
-        title: 'Group Learning',
-        src: '/gallery/activity1.jpg'
+        title: 'Group Photo',
+        src: '/gallery/activity2.jpeg'
+    },
+    {
+        id: 20,
+        category: 'Certificates',
+        title: 'Government Certificates',
+        src: '/gallery/certificate1.jpg'
     },
 ]
 
