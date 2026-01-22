@@ -89,118 +89,135 @@ const CourseDetails = () => {
         subtitle={`${course.level} Program`}
       />
 
-      <section className="py-5">
+      <section className="py-4 bg-light">
         <div className="container">
 
-          <div className="mb-4">
+          {/* Back Button */}
+          <div className="mb-3">
             <button
               onClick={() => navigate(-1)}
-              className="btn btn-outline-secondary btn-sm"
+              className="btn btn-link p-0 text-decoration-none small"
             >
               ← Back to Courses
             </button>
           </div>
 
-          <div className="row g-4 align-items-start">
+          <div className="row g-4">
 
-            {/* LEFT – SYLLABUS */}
+            {/* LEFT CONTENT */}
             <div className="col-lg-8">
 
-              {/* 🔹 Designed For */}
-              {Array.isArray(course.designedFor) &&
-                course.designedFor.length > 0 && (
-                  <div className="mb-4">
-                    <h5 className="fw-bold mb-3">
-                      Who Should Join This Course
-                    </h5>
-
+              {/* Designed For */}
+              {Array.isArray(course.designedFor) && course.designedFor.length > 0 && (
+                <div className="card border-0 shadow-sm mb-4">
+                  <div className="card-body">
+                    <h6 className="fw-bold mb-2">Who Should Join</h6>
                     <div className="d-flex flex-wrap gap-2">
                       {course.designedFor.map((item, index) => (
                         <span
                           key={index}
-                          className="badge bg-light text-dark border small"
+                          className="badge rounded-pill bg-secondary-subtle text-dark small"
                         >
                           {item}
                         </span>
                       ))}
                     </div>
                   </div>
-                )}
+                </div>
+              )}
 
-              <h5 className="fw-bold mb-3">Course Syllabus</h5>
+              {/* Syllabus */}
+              <div className="card border-0 shadow-sm">
+                <div className="card-body">
+                  <h6 className="fw-bold mb-3">Course Syllabus</h6>
 
-              {Array.isArray(course.syllabus) &&
-                course.syllabus.length > 0 ? (
-                course.syllabus.map((mod, index) => (
-                  <div
-                    className="card shadow-sm border-0 mb-4"
-                    key={mod._id || index}
-                  >
+                  {Array.isArray(course.syllabus) && course.syllabus.length > 0 ? (
+                    course.syllabus.map((mod, index) => (
+                      <div key={mod._id || index} className="mb-4">
+                        <div className="fw-semibold mb-2">
+                          Module {index + 1}: {mod.module}
+                        </div>
+
+                        <ul className="list-unstyled small ps-3 mb-0">
+                          {Array.isArray(mod.topics) &&
+                            mod.topics.map((topic, i) => (
+                              <li key={i} className="mb-1">
+                                • {topic}
+                              </li>
+                            ))}
+                        </ul>
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-muted small mb-0">
+                      Syllabus will be provided during admission.
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              {/* Career Opportunities */}
+              {Array.isArray(course.careerOpportunities) &&
+                course.careerOpportunities.length > 0 && (
+                  <div className="card border-0 shadow-sm mt-4">
                     <div className="card-body">
-
                       <h6 className="fw-bold mb-3">
-                        Module {index + 1}: {mod.module}
+                        Career Opportunities
                       </h6>
-
-                      <ul className="list-group list-group-flush small">
-                        {Array.isArray(mod.topics) &&
-                          mod.topics.map((topic, i) => (
-                            <li
-                              className="list-group-item px-0"
-                              key={i}
-                            >
-                              {topic}
-                            </li>
-                          ))}
+                      <ul className="list-unstyled small mb-0">
+                        {course.careerOpportunities.map((career, index) => (
+                          <li key={index} className="mb-1">
+                            • {career}
+                          </li>
+                        ))}
                       </ul>
-
                     </div>
                   </div>
-                ))
-              ) : (
-                <p className="text-muted small">
-                  Syllabus will be provided during admission.
-                </p>
-              )}
+                )}
             </div>
 
-            {/* RIGHT – COURSE INFO */}
+            {/* RIGHT SIDEBAR */}
             <div className="col-lg-4">
               <div
-                className="card shadow-sm border-0 sticky-top"
+                className="card border-0 shadow-sm sticky-top"
                 style={{ top: '90px' }}
               >
-                <div className="card-body p-4">
+                <div className="card-body">
 
-                  <h6 className="fw-bold mb-3">
-                    Course Information
-                  </h6>
+                  <h6 className="fw-bold mb-3">Course Overview</h6>
 
-                  <ul className="list-unstyled small mb-4">
-                    <li className="mb-2">
-                      <strong>Duration:</strong> {course.duration || '—'}
-                    </li>
-                    <li className="mb-2">
-                      <strong>Eligibility:</strong> {course.eligibility || '—'}
-                    </li>
-                    <li className="mb-2">
-                      <strong>Authority:</strong> {course.authority || '—'}
-                    </li>
-                    <li className="mb-2">
-                      <strong>Certificate:</strong> {course.certificate || '—'}
-                    </li>
-                    <li>
-                      <strong>Verification:</strong> {course.verification || '—'}
-                    </li>
-                  </ul>
+                  <div className="small">
+                    <div className="d-flex justify-content-between mb-2">
+                      <span className="text-muted">Duration</span>
+                      <span>{course.duration || '—'}</span>
+                    </div>
 
-                  <a
-                    href="/enquiry"
-                    className="btn btn-primary w-100"
-                  >
-                    Enquire About This Course
+                    <div className="d-flex justify-content-between mb-2">
+                      <span className="text-muted">Eligibility</span>
+                      <span>{course.eligibility || '—'}</span>
+                    </div>
+
+                    <div className="d-flex justify-content-between mb-2">
+                      <span className="text-muted">Authority</span>
+                      <span>{course.authority || '—'}</span>
+                    </div>
+
+                    <div className="d-flex justify-content-between mb-2">
+                      <span className="text-muted">Certificate</span>
+                      <span>{course.certificate || '—'}</span>
+                    </div>
+
+                    <div className="d-flex justify-content-between">
+                      <span className="text-muted">Verification</span>
+                      <span>{course.verification || '—'}</span>
+                    </div>
+                  </div>
+
+                  <hr />
+
+                  <a href="/enquiry" className="btn btn-primary w-100">
+                    Enquire Now
                   </a>
-
                 </div>
               </div>
             </div>
@@ -208,6 +225,7 @@ const CourseDetails = () => {
           </div>
         </div>
       </section>
+
     </>
   )
 }

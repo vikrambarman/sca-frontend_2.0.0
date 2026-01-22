@@ -21,6 +21,7 @@ const AddEditCourse = () => {
         duration: '',
         eligibility: '',
         designedFor: [],
+        careerOpportunities: [],
         certificate: '',
         syllabus: [],
         isActive: true
@@ -245,6 +246,35 @@ const AddEditCourse = () => {
                     })
                 }
             />
+
+            {/* Career Opportunities */}
+            <div className="mb-3">
+                <label className="form-label">
+                    Career Opportunities After This Course
+                </label>
+                <textarea
+                    className="form-control"
+                    rows="4"
+                    placeholder={`Example:
+Computer Operator
+Office Assistant
+Data Entry Operator`}
+                    value={form.careerOpportunities.join('\n')}
+                    onChange={e =>
+                        setForm({
+                            ...form,
+                            careerOpportunities: e.target.value
+                                .split('\n')
+                                .map(item => item.trim())
+                                .filter(Boolean)
+                        })
+                    }
+                />
+                <small className="text-muted">
+                    Add one career option per line
+                </small>
+            </div>
+
 
             {/* Status */}
             <select
