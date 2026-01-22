@@ -13,39 +13,42 @@
       {
         "module": "Computer Basic",
         "topics": [
-          "What is Computer?",
-          "Types of Computers",
-          "Working of Computer",
-          "Input/Output Devices",
-          "Differences between Hardware & Software"
+          "What is Computer",
+          "Types of Computer",
+          "Working of a Computer System",
+          "Input Devices and Output Devices",
+          "Difference between Hardware and Software"
         ],
         "_id": "6971d23dbb794cf6076640a0"
       },
       {
         "module": "Windows & File Handling",
         "topics": [
-          "What are windows and how to use it?",
-          "Folder & File Management",
-          "Use of Pendrives"
+          "Introduction to Windows Operating System",
+          "Desktop, Taskbar, and System Navigation",
+          "Creating, Renaming, Copying, and Deleting Files & Folders",
+          "Folder Management and File Organization",
+          "Use of Pen Drives and External Storage Devices"
         ],
         "_id": "6971d23dbb794cf6076640a1"
       },
       {
         "module": "Internet & Digital Works",
         "topics": [
-          "What is Internet and how to use it?",
-          "Creating Email and use them",
-          "Online form filling",
-          "Use of Government websites"
+          "Introduction to Internet and Web Browsing",
+          "Creating and Using Email Accounts",
+          "Sending and Receiving Emails with Attachments",
+          "Online Form Filling (Admissions, Jobs, Government Forms)",
+          "Use of Government and Utility Websites"
         ],
         "_id": "6971d3c8bb794cf6076640b1"
       },
       {
         "module": "MS Office Basics",
         "topics": [
-          "MS Word - Explaining interface, Creating documents, Basic formatting. ",
-          "MS Excel - Explaining interface, Basic Concepts of table, Basic formatting and Basic working on functions",
-          "MS PowerPoint - Explaining interface and making ppt"
+          "MS Word - Interface Overview, Creating and Saving Documents, Basic Formatting (Font, Paragraph, Page Setup)",
+          "MS Excel - Interface Overview, Basics of Worksheets and Tables, Data Entry and Formatting, Introduction to Basic Functions",
+          "MS PowerPoint - Interface Overview, Creating Slides, Designing Simple Presentations"
         ],
         "_id": "6971d3c8bb794cf6076640b2"
       }
@@ -57,6 +60,15 @@
       "Students seeking basic computer literacy for jobs",
       "Office / Clerical Job Aspirants",
       "Private Company / Shop Staff"
+    ],
+    "careerOpportunities": [
+      "Computer Operator (Entry Level)",
+      "Office Assistant",
+      "Data Entry Operator",
+      "Front Desk Executive",
+      "Back Office Staff",
+      "Office Helper with Computer Knowledge",
+      "Support Staff in Private Offices and Shops"
     ]
   }
 ]
