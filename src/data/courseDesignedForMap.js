@@ -15,7 +15,10 @@ export const COURSE_DESIGNED_FOR_MAP = [
             'Office Job Aspirants',
             'College Students',
             'Private Company / Shop Staff',
-            'Entry-level IT / Office Job Aspirants'
+            'Data entry operators',
+            'Entry-level IT / Office Job Aspirants',
+            'Beginners who want office-ready computer skills',
+            'Students preparing for clerical or office roles'
         ]
     },
     {
@@ -23,7 +26,8 @@ export const COURSE_DESIGNED_FOR_MAP = [
         designedFor: [
             'Beginners with slow typing speed',
             'Government Exam Aspirants',
-            'Office / Clerical Job Aspirants'
+            'Office / Clerical Job Aspirants',
+            'Candidates requiring Hindi & English typing certification'
         ]
     },
     {

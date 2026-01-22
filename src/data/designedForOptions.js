@@ -3,10 +3,12 @@ export const DESIGNED_FOR_OPTIONS = [
     'First-time Computer Learners',
     'Students seeking basic computer literacy for jobs',
     'Office Job Aspirants',
+    'Candidates requiring Hindi & English typing certification',
     'Private Company / Shop Staff',
     'College Students',
     'Graduate Students',
     'Working Professionals',
+    'Data entry operators',
     'Learners aiming to upgrade from basic to advanced level',
     'Students seeking Diploma / Professional Certification',
     'Entry-level IT / Office Job Aspirants',
@@ -14,5 +16,7 @@ export const DESIGNED_FOR_OPTIONS = [
     'Students seeking higher technical qualifications',
     'Government Exam Aspirants',
     'Office / Clerical Job Aspirants',
-    'Beginners with slow typing speed'
+    'Beginners with slow typing speed',
+    'Beginners who want office-ready computer skills',
+    'Students preparing for clerical or office roles'
 ]

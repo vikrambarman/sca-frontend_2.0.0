@@ -70,5 +70,177 @@
       "Office Helper with Computer Knowledge",
       "Support Staff in Private Offices and Shops"
     ]
+  },
+  {
+    "_id": "6971faa821b1869db9a7530d",
+    "name": "MS Office Course",
+    "slug": "ms-office",
+    "level": "Foundation Courses",
+    "authority": "Drishti Computer Education",
+    "verification": "Drishti Computer Education",
+    "duration": "3 Months",
+    "eligibility": "12th+",
+    "designedFor": [
+      "Office Job Aspirants",
+      "College Students",
+      "Private Company / Shop Staff",
+      "Data entry operators",
+      "Entry-level IT / Office Job Aspirants",
+      "Beginners who want office-ready computer skills",
+      "Students preparing for clerical or office roles",
+      "Working Professionals"
+    ],
+    "careerOpportunities": [
+      "Office Assistant",
+      "Computer Operator",
+      "Data Entry Operator",
+      "Back Office Executive",
+      "Front Desk Executive",
+      "Office Clerk",
+      "Documentation Executive",
+      "Junior Office Executive"
+    ],
+    "certificate": "Drishti Computer Education",
+    "syllabus": [
+      {
+        "module": "MS Word (Professional Document Processing)",
+        "topics": [
+          "Introduction to MS Word Interface",
+          "Creating, Editing, and Saving Documents",
+          "Text Formatting (Font, Paragraph, Styles)",
+          "Page Setup, Margins, Headers & Footers",
+          "Tables, Lists, and Columns",
+          "Inserting Images, Shapes, and Symbols",
+          "Printing and Document Sharing"
+        ],
+        "_id": "6971faa821b1869db9a7530e"
+      },
+      {
+        "module": "MS Excel (Data Management & Analysis)",
+        "topics": [
+          "Introduction to Excel Interface",
+          "Worksheets, Cells, Rows, and Columns",
+          "Data Entry and Formatting",
+          "Basic Formulas and Functions (SUM, AVERAGE, COUNT, MAX, MIN)",
+          "Sorting and Filtering Data",
+          "Creating Charts and Graphs",
+          "Basic Financial and Office Reports"
+        ],
+        "_id": "6971faa821b1869db9a7530f"
+      },
+      {
+        "module": "MS PowerPoint (Presentation & Communication)",
+        "topics": [
+          "Introduction to PowerPoint Interface",
+          "Creating and Managing Slides",
+          "Slide Layouts and Themes",
+          "Adding Text, Images, Tables, and Charts",
+          "Transitions and Animations",
+          "Slide Show Setup and Presentation Techniques"
+        ],
+        "_id": "6971faa821b1869db9a75310"
+      },
+      {
+        "module": "Office Productivity & Practical Work",
+        "topics": [
+          "File Management for Office Work",
+          "Professional Document Practice",
+          "Excel-Based Office Tasks",
+          "Presentation Projects",
+          "Practical Assignments and Office Scenarios"
+        ],
+        "_id": "6971faa821b1869db9a75311"
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "_id": "6971fd1721b1869db9a7538b",
+    "name": "Typing Course (Hindi & English)",
+    "slug": "typing",
+    "level": "Foundation Courses",
+    "authority": "Drishti Computer Education",
+    "verification": "Drishti Computer Education",
+    "duration": "6 Months",
+    "eligibility": "8th+",
+    "designedFor": [
+      "Beginners with slow typing speed",
+      "Government Exam Aspirants",
+      "Office / Clerical Job Aspirants",
+      "Candidates requiring Hindi & English typing certification",
+      "Data entry operators",
+      "Private Company / Shop Staff",
+      "College Students",
+      "Graduate Students",
+      "Working Professionals"
+    ],
+    "careerOpportunities": [
+      "Typist (Hindi / English)",
+      "Data Entry Operator",
+      "Computer Operator",
+      "Office Clerk",
+      "Junior Assistant",
+      "Back Office Executive",
+      "Government Typing Exam Candidate"
+    ],
+    "certificate": "Drishti Computer Education",
+    "syllabus": [
+      {
+        "module": "Typing Fundamentals",
+        "topics": [
+          "Introduction to Typing",
+          "Importance of Touch Typing",
+          "Keyboard Layout and Key Functions",
+          "Correct Sitting Posture and Finger Placement",
+          "Home Row Keys Practice"
+        ],
+        "_id": "6971fe8321b1869db9a753c7"
+      },
+      {
+        "module": "English Typing",
+        "topics": [
+          "English Keyboard Layout",
+          "Finger Movement Practice",
+          "Alphabet, Word, and Sentence Typing",
+          "Speed Development Techniques",
+          "Accuracy Improvement Exercises",
+          "Paragraph Typing Practice"
+        ],
+        "_id": "6971fe8321b1869db9a753c8"
+      },
+      {
+        "module": "Hindi Typing",
+        "topics": [
+          "Introduction to Hindi Typing",
+          "Hindi Keyboard Layout (Kruti Dev / Mangal / Remington as per requirement)",
+          "Matra and Special Character Practice",
+          "Word and Sentence Typing in Hindi",
+          "Paragraph Typing Practice"
+        ],
+        "_id": "6971fe8321b1869db9a753c9"
+      },
+      {
+        "module": "Speed & Accuracy Practice",
+        "topics": [
+          "Timed Typing Tests",
+          "Speed Improvement Drills",
+          "Accuracy Checking and Error Reduction",
+          "Typing Practice with Numbers and Symbols",
+          "Mock Tests (Exam Pattern Based)"
+        ],
+        "_id": "6971fe8321b1869db9a753ca"
+      },
+      {
+        "module": "Exam & Office Typing Practice",
+        "topics": [
+          "Government Exam Typing Pattern Practice",
+          "Office-Based Typing Work",
+          "Application Forms and Office Documents Typing",
+          "Final Speed and Accuracy Assessment"
+        ],
+        "_id": "6971fe8321b1869db9a753cb"
+      }
+    ],
+    "isActive": true
   }
 ]
