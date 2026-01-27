@@ -31,11 +31,13 @@ export const COURSE_DESIGNED_FOR_MAP = [
         ]
     },
     {
-        match: ['tally', 'busy', 'gst'],
+        match: ['tally', 'busy', 'gst', 'advance excel'],
         designedFor: [
             'Office Job Aspirants',
             'Private Company / Shop Staff',
-            'Working Professionals'
+            'Working Professionals',
+            'Accounting students',
+            'Professionals handling reports and data'
         ]
     },
     {

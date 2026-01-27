@@ -18,5 +18,11 @@ export const DESIGNED_FOR_OPTIONS = [
     'Office / Clerical Job Aspirants',
     'Beginners with slow typing speed',
     'Beginners who want office-ready computer skills',
-    'Students preparing for clerical or office roles'
+    'Students preparing for clerical or office roles',
+    'Accounting students',
+    'Professionals handling reports and data',
+    'CA / CS office assistants',
+    'Small business owners',
+    'Working professionals in accounts field',
+    'Commerce students'
 ]

@@ -197,10 +197,10 @@ const CourseDetails = () => {
                       <span>{course.eligibility || '—'}</span>
                     </div>
 
-                    <div className="d-flex justify-content-between mb-2">
+                    {/* <div className="d-flex justify-content-between mb-2">
                       <span className="text-muted">Authority</span>
                       <span>{course.authority || '—'}</span>
-                    </div>
+                    </div> */}
 
                     <div className="d-flex justify-content-between mb-2">
                       <span className="text-muted">Certificate</span>
