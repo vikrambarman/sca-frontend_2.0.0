@@ -105,18 +105,36 @@ const images = [
     },
     {
         id: 18,
-        category: 'Student Activities',
+        category: 'Activities',
         title: 'Group Photo',
         src: '/gallery/activity1.jpeg'
     },
     {
         id: 19,
-        category: 'Student Activities',
+        category: 'Activities',
         title: 'Group Photo',
         src: '/gallery/activity2.jpeg'
     },
     {
         id: 20,
+        category: 'Activities',
+        title: 'Republic Day',
+        src: '/gallery/activity3.jpeg'
+    },
+    {
+        id: 21,
+        category: 'Activities',
+        title: 'Republic Day',
+        src: '/gallery/activity4.jpeg'
+    },
+    {
+        id: 22,
+        category: 'Activities',
+        title: 'Maa Saraswati Pooja in Basant Panchami',
+        src: '/gallery/activity5.jpeg'
+    },
+    {
+        id: 23,
         category: 'Certificates',
         title: 'Government Certificates',
         src: '/gallery/certificate1.jpg'

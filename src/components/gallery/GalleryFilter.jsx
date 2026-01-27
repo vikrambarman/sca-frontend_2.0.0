@@ -4,7 +4,7 @@ const categories = [
     'Computer Lab',
     'Events',
     'Certificates',
-    'Student Activities'
+    'Activities'
 ]
 
 const GalleryFilter = ({ active, setActive }) => {
