@@ -242,5 +242,268 @@
       }
     ],
     "isActive": true
+  },
+  {
+    "_id": "69788816592eabb5adab4882",
+    "name": "Advance Excel",
+    "slug": "advance-excel",
+    "level": "Accounting & Business Courses",
+    "authority": "Drishti Computer Education | Gramin Skill Development Mission",
+    "verification": "Drishti Computer Education | GSDM + NSDC",
+    "duration": "3 Months",
+    "eligibility": "12th+",
+    "designedFor": [
+      "Office Job Aspirants",
+      "Private Company / Shop Staff",
+      "College Students",
+      "Graduate Students",
+      "Working Professionals",
+      "Data entry operators",
+      "Learners aiming to upgrade from basic to advanced level",
+      "Office / Clerical Job Aspirants",
+      "Accounting students",
+      "Professionals handling reports and data"
+    ],
+    "careerOpportunities": [
+      "MIS Executive",
+      "Data Analyst (Entry Level)",
+      "Excel Executive",
+      "Back Office Executive",
+      "Accounts Assistant",
+      "Reporting Executive",
+      "Office Analyst",
+      "Advance Excel skills are highly demanded in: Private companies, Accounting firms, Corporate offices, Manufacturing and service industries"
+    ],
+    "certificate": "Drishti Computer Education | GSDM",
+    "syllabus": [
+      {
+        "module": "Advanced Excel Foundations",
+        "topics": [
+          "Advanced Excel Interface and Workbook Management",
+          "Data Validation and Data Cleaning",
+          "Advanced Formatting Techniques",
+          "Conditional Formatting (Rules & Logic)"
+        ],
+        "_id": "69788a16592eabb5adab4902"
+      },
+      {
+        "module": "Advanced Formulas & Functions",
+        "topics": [
+          "Logical Functions (IF, IFS, AND, OR)        ",
+          "Lookup & Reference Functions (VLOOKUP, HLOOKUP, XLOOKUP, INDEX, MATCH, COUNTIF, COUNTIFS, AVERAGEIF, AVERAGEIFS, SUMIF, SUMIFS)",
+          "Text Functions (LEFT, RIGHT, MID, LEN, CONCAT, TRIM)",
+          "Date & Time Functions",
+          "Nested Functions and Practical Examples"
+        ],
+        "_id": "69788a16592eabb5adab4903"
+      },
+      {
+        "module": "Data Analysis & Management",
+        "topics": [
+          "Sorting and Filtering (Advanced Level)       ",
+          "Pivot Tables and Pivot Charts ",
+          "Data Consolidation",
+          "What-If Analysis",
+          "Subtotals and Grouping"
+        ],
+        "_id": "69788a16592eabb5adab4904"
+      },
+      {
+        "module": "Charts, Dashboards & Reporting",
+        "topics": [
+          "Advanced Charts and Graphs      ",
+          "Interactive Dashboards",
+          "MIS Report Preparation",
+          "Business and Office Reporting Techniques"
+        ],
+        "_id": "69788a16592eabb5adab4905"
+      },
+      {
+        "module": "Excel Automation & Productivity",
+        "topics": [
+          "Introduction to Macros     ",
+          "Recording and Using Macros ",
+          "Basic VBA Concepts (Optional)",
+          "Automating Repetitive Office Tasks"
+        ],
+        "_id": "69788a16592eabb5adab4906"
+      },
+      {
+        "module": "Practical Office Projects",
+        "topics": [
+          "Real-Time Data Entry Projects        ",
+          "Sales & Accounting Reports",
+          "Attendance and Payroll Sheets",
+          "Inventory and Stock Management Sheets",
+          "Final Practical Assessment"
+        ],
+        "_id": "69788a16592eabb5adab4907"
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "_id": "69788f00592eabb5adab4a0e",
+    "name": "Tally Prime",
+    "slug": "tallyprime",
+    "level": "Accounting & Business Courses",
+    "authority": "Drishti Computer Education | Gramin Skill Development Mission",
+    "verification": "Drishti Computer Education | GSDM + NSDC",
+    "duration": "3 Months",
+    "eligibility": "10th+",
+    "designedFor": [
+      "Office Job Aspirants",
+      "Private Company / Shop Staff",
+      "Working Professionals",
+      "Accounting students",
+      "Professionals handling reports and data",
+      "College Students",
+      "Graduate Students",
+      "Commerce students",
+      "CA / CS office assistants",
+      "Small business owners",
+      "Working professionals in accounts field"
+    ],
+    "careerOpportunities": [
+      "Accounts Executive (Junior Level)",
+      "Accounts Assistant",
+      "Billing Executive",
+      "Tally Operator",
+      "Junior Accountant",
+      "Office Accounts Staff"
+    ],
+    "certificate": "Drishti Computer Education | GSDM",
+    "syllabus": [
+      {
+        "module": "Accounting Fundamentals",
+        "topics": [
+          "Introduction to Accounting        ",
+          "Basic Accounting Terms and Concepts",
+          "Types of Accounts and Accounting Rules",
+          "Golden Rules of Accounting",
+          "Manual Accounting Overview"
+        ],
+        "_id": "69788f00592eabb5adab4a0f"
+      },
+      {
+        "module": "Introduction to Tally Prime",
+        "topics": [
+          "Introduction to Tally Prime Interface",
+          "Company Creation and Configuration",
+          "Accounting Features and Settings",
+          "Chart of Accounts"
+        ],
+        "_id": "69788f00592eabb5adab4a10"
+      },
+      {
+        "module": "Accounting in Tally Prime",
+        "topics": [
+          "Ledger Creation        ",
+          " Group Creation and Alteration",
+          "Voucher Entry (Payment, Receipt, Contra, Journal)",
+          "Sales and Purchase Entries",
+          "Credit Note and Debit Note"
+        ],
+        "_id": "69788f00592eabb5adab4a11"
+      },
+      {
+        "module": "Inventory Management",
+        "topics": [
+          "Stock Groups and Stock Items",
+          "Units of Measurement",
+          "Inventory Vouchers",
+          "Stock Valuation",
+          "Godown Management (Basic)"
+        ],
+        "_id": "69788f00592eabb5adab4a12"
+      },
+      {
+        "module": "Banking & Taxation Basics",
+        "topics": [
+          "Bank Reconciliation Statement (BRS)",
+          "Cheque Printing",
+          "Interest Calculation",
+          "Introduction to Taxation Concepts",
+          "Basic GST Overview (Without Returns)"
+        ],
+        "_id": "69788f00592eabb5adab4a13"
+      },
+      {
+        "module": "Reports & Practical Work",
+        "topics": [
+          "Trial Balance",
+          "Profit & Loss Account",
+          "Balance Sheet",
+          "Stock Summary",
+          "Practical Business Case Studies"
+        ],
+        "_id": "69788f00592eabb5adab4a14"
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "_id": "69789332592eabb5adab4d3a",
+    "name": "Tally Prime with GST",
+    "slug": "tallyprime-gst",
+    "level": "Accounting & Business Courses",
+    "authority": "Drishti Computer Education | Gramin Skill Development Mission",
+    "verification": "Drishti Computer Education | GSDM + NSDC",
+    "duration": "3 Months",
+    "eligibility": "10th+",
+    "designedFor": [
+      "Office Job Aspirants",
+      "Private Company / Shop Staff",
+      "Working Professionals",
+      "Accounting students",
+      "Professionals handling reports and data",
+      "Commerce students",
+      "Small business owners",
+      "CA / CS office assistants",
+      "Working professionals in accounts field",
+      "College Students"
+    ],
+    "careerOpportunities": [
+      "Accounts Executive",
+      "GST Executive",
+      "Tally Operator with GST",
+      "Accounts Assistant",
+      "Billing & GST Executive",
+      "Junior Accountant"
+    ],
+    "certificate": "Drishti Computer Education | GSDM",
+    "syllabus": [
+      {
+        "module": "Accounting & GST Fundamentals",
+        "topics": [],
+        "_id": "697896fd592eabb5adab4ddc"
+      },
+      {
+        "module": "Tally Prime Configuration for GST",
+        "topics": [],
+        "_id": "697896fd592eabb5adab4ddd"
+      },
+      {
+        "module": "GST Transactions in Tally Prime",
+        "topics": [],
+        "_id": "697896fd592eabb5adab4dde"
+      },
+      {
+        "module": "GST Returns & Compliance",
+        "topics": [],
+        "_id": "697896fd592eabb5adab4ddf"
+      },
+      {
+        "module": "Banking & Advanced Accounting",
+        "topics": [],
+        "_id": "697896fd592eabb5adab4de0"
+      },
+      {
+        "module": "Practical Training & Case Studies",
+        "topics": [],
+        "_id": "697896fd592eabb5adab4de1"
+      }
+    ],
+    "isActive": true
   }
 ]
