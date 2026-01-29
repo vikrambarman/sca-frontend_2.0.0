@@ -135,6 +135,12 @@ const images = [
     },
     {
         id: 23,
+        category: 'Activities',
+        title: 'Student Group Photos',
+        src: '/gallery/activity6.jpeg'
+    },
+    {
+        id: 24,
         category: 'Certificates',
         title: 'Government Certificates',
         src: '/gallery/certificate1.jpg'
