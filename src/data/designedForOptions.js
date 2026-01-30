@@ -24,5 +24,13 @@ export const DESIGNED_FOR_OPTIONS = [
     'CA / CS office assistants',
     'Small business owners',
     'Working professionals in accounts field',
-    'Commerce students'
+    'Commerce students',
+    'Beginners interested in technical field',
+    'Students seeking hardware & repair skills',
+    'Diploma & degree students',
+    'Job seekers in technical support',
+    'Self-employment & service center aspirants',
+    'Students interested in networking field',
+    'Hardware professionals upgrading skills',
+    'Job seekers in networking & IT infrastructure'
 ]

@@ -505,5 +505,233 @@
       }
     ],
     "isActive": true
+  },
+  {
+    "_id": "697c9d314b7e9442bbd63549",
+    "name": "DCA – Diploma in Computer Applications",
+    "slug": "dca",
+    "level": "Diploma Courses",
+    "authority": "Gramin Skill Development Mission",
+    "verification": "GSDM + NSDC + DigiLocker",
+    "duration": "900 Hrs.",
+    "eligibility": "12th+",
+    "designedFor": [
+      "College Students",
+      "Graduate Students",
+      "Students seeking Diploma / Professional Certification",
+      "IT Aspirants",
+      "Office / Clerical Job Aspirants",
+      "Students seeking higher technical qualifications",
+      "Working Professionals",
+      "Private Company / Shop Staff"
+    ],
+    "careerOpportunities": [],
+    "certificate": "Please contact institute...",
+    "syllabus": [],
+    "isActive": true
+  },
+  {
+    "_id": "697c9deb4b7e9442bbd6364d",
+    "name": "PGDCA – Post Graduate Diploma in Computer Applications",
+    "slug": "pgdca",
+    "level": "Diploma Courses",
+    "authority": "Gramin Skill Development Mission",
+    "verification": "GSDM + NSDC + DigiLocker",
+    "duration": "1200 Hrs.",
+    "eligibility": "Graduate",
+    "designedFor": [
+      "Graduate Students",
+      "Students seeking Diploma / Professional Certification",
+      "IT Aspirants",
+      "Working Professionals",
+      "Learners aiming to upgrade from basic to advanced level",
+      "Entry-level IT / Office Job Aspirants",
+      "Students seeking higher technical qualifications",
+      "Office / Clerical Job Aspirants"
+    ],
+    "careerOpportunities": [],
+    "certificate": "Please Contact Institute...",
+    "syllabus": [],
+    "isActive": true
+  },
+  {
+    "_id": "697ca40a4b7e9442bbd63791",
+    "name": "Computer Hardware",
+    "slug": "hardware",
+    "level": "IT & Technical Courses",
+    "authority": "Gramin Skill Development Mission | Drishti Computer Education",
+    "verification": "NSDC + GSDM | Drishti Computer Education",
+    "duration": "3 Months",
+    "eligibility": "12th+",
+    "designedFor": [
+      "IT Aspirants",
+      "Entry-level IT / Office Job Aspirants",
+      "Students seeking higher technical qualifications",
+      "Job seekers in technical support",
+      "Students seeking hardware & repair skills",
+      "Diploma & degree students",
+      "Self-employment & service center aspirants",
+      "Beginners interested in technical field"
+    ],
+    "careerOpportunities": [
+      "Computer Hardware Technician",
+      "Desktop / Laptop Support Engineer",
+      "IT Support Executive",
+      "Service Center Technician",
+      "Field Support Engineer",
+      "Computer Repair & Service Center",
+      "Freelance Hardware Technician",
+      "Further course pathways: Networking, CCNA, Server Administration, Cyber Security"
+    ],
+    "certificate": "",
+    "syllabus": [
+      {
+        "module": "Introduction to Computer Hardware",
+        "topics": [
+          "Basics of Computer System",
+          "Hardware vs Software",
+          "Types of Computers (Desktop, Laptop, Server)",
+          "Computer System Block Diagram"
+        ],
+        "_id": "697ca40a4b7e9442bbd63792"
+      },
+      {
+        "module": "Internal Components of Computer",
+        "topics": [
+          "Motherboard – Types & Components        ",
+          "Processor (CPU) – Types & Generations",
+          "RAM, ROM and Cache Memory",
+          "SMPS and Power Supply",
+          "Internal Cables & Connectors"
+        ],
+        "_id": "697ca40a4b7e9442bbd63793"
+      },
+      {
+        "module": "Storage Devices",
+        "topics": [
+          "Hard Disk Drive (HDD)  )",
+          "Solid State Drive (SSD",
+          "Optical Drives",
+          "External Storage Devices",
+          "Data Backup Concepts"
+        ],
+        "_id": "697ca40a4b7e9442bbd63794"
+      },
+      {
+        "module": "Input & Output Devices",
+        "topics": [
+          "Keyboard, Mouse, Scanner      ",
+          "Printer Types (Inkjet, Laser)",
+          "Monitor Types & Resolutions",
+          "Webcam, Speakers & Other Peripherals"
+        ],
+        "_id": "697ca40a4b7e9442bbd63795"
+      },
+      {
+        "module": "Computer Assembling",
+        "topics": [
+          "Desktop Assembling (Step-by-Step)      ",
+          "BIOS / UEFI Setup",
+          "Installing Operating System (Windows / Linux Basics)",
+          "Driver Installation"
+        ],
+        "_id": "697ca40a4b7e9442bbd63796"
+      },
+      {
+        "module": "Troubleshooting & Maintenance",
+        "topics": [
+          "Common Hardware Problems        ",
+          "Booting Issues",
+          "Overheating & Power Problems",
+          "Preventive Maintenance",
+          "System Optimization"
+        ],
+        "_id": "697ca40a4b7e9442bbd63797"
+      },
+      {
+        "module": "Laptop & Peripheral Hardware",
+        "topics": [
+          "Laptop Components Overview      ",
+          "Laptop Disassembling Basics",
+          "Battery, Display & Keyboard Issues",
+          "Peripheral Troubleshooting"
+        ],
+        "_id": "697ca40a4b7e9442bbd63798"
+      },
+      {
+        "module": "Basic Networking",
+        "topics": [
+          "Networking Basics (LAN, WAN)      Basic Hardware Security & Safety",
+          "Cables & Connectors",
+          "Internet & Modem Setup"
+        ],
+        "_id": "697ca40a4b7e9442bbd63799"
+      },
+      {
+        "module": "Practical & Project Work",
+        "topics": [
+          "Real Hardware Repair Practice    ",
+          "Assembling & Troubleshooting Project",
+          "Viva & Final Assessment"
+        ],
+        "_id": "697ca40a4b7e9442bbd6379a"
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "_id": "697ca6114b7e9442bbd638f8",
+    "name": "Computer Networking",
+    "slug": "networking",
+    "level": "IT & Technical Courses",
+    "authority": "Gramin Skill Development Mission | Drishti Computer Education",
+    "verification": "NSDC + GSDM | Drishti Computer Education",
+    "duration": "3 Months",
+    "eligibility": "12th+",
+    "designedFor": [
+      "IT Aspirants",
+      "Entry-level IT / Office Job Aspirants",
+      "Students seeking higher technical qualifications",
+      "Students interested in networking field",
+      "Job seekers in networking & IT infrastructure",
+      "Hardware professionals upgrading skills",
+      "Job seekers in technical support",
+      "Graduate Students",
+      "College Students"
+    ],
+    "careerOpportunities": [
+      "Network Technician",
+      "Network Support Engineer",
+      "IT Support Executive",
+      "System Administrator (Entry Level)",
+      "Help Desk Engineer",
+      "Network Installation & Maintenance Services",
+      "Small Office / Home Network Setup",
+      "Further course pathways: CCNA, Server Administration, Cyber Security, Cloud Computing"
+    ],
+    "certificate": "",
+    "syllabus": [
+      {
+        "module": "Introduction to Networking",
+        "topics": [],
+        "_id": "697ca6a24b7e9442bbd63a46"
+      },
+      {
+        "module": "Networking Devices",
+        "topics": [],
+        "_id": "697ca6a24b7e9442bbd63a47"
+      },
+      {
+        "module": "Networking Cables & Connectors",
+        "topics": [],
+        "_id": "697ca6a24b7e9442bbd63a48"
+      },
+      {
+        "module": "IP Addressing & Protocols",
+        "topics": [],
+        "_id": "697ca6a24b7e9442bbd63a49"
+      }
+    ],
+    "isActive": true
   }
 ]
