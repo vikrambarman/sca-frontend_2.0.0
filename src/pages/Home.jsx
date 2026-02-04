@@ -21,7 +21,7 @@ const Home = () => {
 
         <meta
           name="description"
-          content="Shivshakti Computer Academy is a leading computer training institute in [City] offering professional computer courses, government-recognized certifications, and skill development programs for students."
+          content="Shivshakti Computer Academy is a leading computer training institute in Ambikapur offering professional computer courses, government-recognized certifications, and skill development programs for students."
         />
 
         {/* Canonical */}
@@ -34,11 +34,11 @@ const Home = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Best Computer Institute & Training Center in [City] | Shivshakti Computer Academy"
+          content="Best Computer Institute & Training Center in Ambikapur | Shivshakti Computer Academy"
         />
         <meta
           property="og:description"
-          content="Join Shivshakti Computer Academy in [City] for professional computer courses, certified training, and career-focused skill development."
+          content="Join Shivshakti Computer Academy in Ambikapur for professional computer courses, certified training, and career-focused skill development."
         />
         <meta
           property="og:url"
@@ -56,7 +56,7 @@ const Home = () => {
             "logo": "https://www.shivshakticomputer.in/logo.png",
             "areaServed": {
               "@type": "Place",
-              "name": "[City]"
+              "name": "Ambikapur"
             }
           }
         `}
