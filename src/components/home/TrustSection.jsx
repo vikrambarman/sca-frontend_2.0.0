@@ -48,7 +48,7 @@ const TrustSection = () => {
                                 aria-hidden="true"
                             />
                             <h3 className="fw-bold mb-0">
-                                <CountUp end={10} duration={2} />+
+                                <CountUp end={5} duration={2} />+
                             </h3>
                             <p className="small text-muted mb-0">
                                 Years of Computer Training Experience
