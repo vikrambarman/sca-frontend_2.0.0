@@ -142,8 +142,8 @@ const images = [
     {
         id: 24,
         category: 'Certificates',
-        title: 'Government Certificates',
-        src: '/gallery/certificate1.jpg'
+        title: 'Nupur Das (Basic Computer Course - BCC)',
+        src: '/gallery/certificate1.jpeg'
     },
 ]
 
